@@ -39,7 +39,7 @@ $( document ).ready(function() {
   let x3Speed = 0.7;
   let y3Speed = 0.9;
 
-  //call function
+  //call function requestAnimationFrame
   prepareUpdate();
 
   function update() {
