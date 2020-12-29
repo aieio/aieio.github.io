@@ -67,24 +67,30 @@ body {
 }
 .shape-bg-1 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   width: 1200px;
+  opacity: 0;
   mix-blend-mode: difference;
+  transition: opacity 1s ease-out;
 }
 .shape-bg-2 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 1200px;
+  left: 500px;
   width: 1200px;
+  opacity: 0;
   mix-blend-mode: difference;
+  transition: opacity 1s ease-out;
 }
 .shape-bg-3 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 700px;
+  left: 200px;
   width: 1200px;
+  opacity: 0;
   mix-blend-mode: difference;
+  transition: opacity 1s ease-out;
 }
 
 

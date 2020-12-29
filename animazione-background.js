@@ -4,6 +4,7 @@ $( document ).ready(function() {
   const logo = document.querySelector(".shape-bg-1");
   const logo2 = document.querySelector(".shape-bg-2");
   const logo3 = document.querySelector(".shape-bg-3");
+  $(".shape-bg-1").css('opacity',1);
 
   const FPS = 60;
 
@@ -22,6 +23,10 @@ $( document ).ready(function() {
 
   let x3Position = 700;
   let y3Position = 200;
+
+  $(".shape-bg-1").css('opacity',1);
+  $(".shape-bg-2").css('opacity',1);
+  $(".shape-bg-3").css('opacity',1);
 
 
   //velocità
