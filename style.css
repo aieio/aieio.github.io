@@ -70,7 +70,7 @@ body {
   top: 10px;
   left: 10px;
   width: 1200px;
-  width: 83vw;
+  width: 88vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
@@ -80,7 +80,7 @@ body {
   top: 1200px;
   left: 500px;
   width: 1200px;
-  width: 83vw;
+  width: 88vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
@@ -90,7 +90,7 @@ body {
   top: 700px;
   left: 200px;
   width: 1200px;
-  width: 83vw;
+  width: 88vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
