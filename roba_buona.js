@@ -5,6 +5,21 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
+
+    //se clicco su scroll vado alla sezione progetti
+    $(".scroll-more-btn").click(function() {
+      $('html,body').animate({
+          scrollTop: $("#projects").offset().top},
+          1000);
+    });
+
+    //test
+    $(".scroll-more-btn").scroll(function(event){
+      $('html,body').animate({
+          scrollTop: $("#projects").offset().top},
+          1000);
+    });
+
     //se scrollo down nella home vado direttamente ai progetti
     var isOnDiv = false;
     $(".home-container").mouseenter(function(){isOnDiv=true;});

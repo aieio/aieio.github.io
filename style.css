@@ -70,6 +70,7 @@ body {
   top: 10px;
   left: 10px;
   width: 1200px;
+  width: 83vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
@@ -79,6 +80,7 @@ body {
   top: 1200px;
   left: 500px;
   width: 1200px;
+  width: 83vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
@@ -88,6 +90,7 @@ body {
   top: 700px;
   left: 200px;
   width: 1200px;
+  width: 83vw;
   opacity: 0;
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
@@ -123,6 +126,9 @@ body {
 .arrow-scroll-more {
   width: 28px;
   mix-blend-mode: difference;
+}
+.scroll-more-btn {
+  cursor: pointer;
 }
 .bravo-on {
   display: inline !important;

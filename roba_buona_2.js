@@ -30,7 +30,7 @@ $( document ).ready(function() {
       if (projectPage.children.length > 0) {
           console.log("c'era già un progetto aperto, mo lo chiudiamo");
           // velocizzo chiusura
-          onProjectClose();
+          onProjectCloseFast();
           //projectPage.firstElementChild.remove();
           //const cloneDaRimuovere = $(".clone");
           //cloneDaRimuovere.remove();
@@ -193,6 +193,16 @@ $( document ).ready(function() {
         //window.scrollTo(0, window.innerHeight)
         var destinazioneScroll = $('#homesection').outerHeight();
         console.log("altezza home section: " + destinazioneScroll);
+
+        //prova mezzo secondo
+        /*
+        setTimeout(
+          function()
+          {
+            window.scrollTo(0, destinazioneScroll);
+          }, 1000);
+        */
+        //questo sotto funziona
         window.scrollTo(0, destinazioneScroll);
         /*$('html, body').animate({
             scrollTop: $("#projects").offset().top
@@ -361,7 +371,7 @@ $( document ).ready(function() {
       const contenutoPagina = clone.querySelector(".project-content");
       const projectHero = clone.querySelector(".project-hero");
       const projectContent = clone.querySelector(".project-content");
-      const duration = 0.1;
+      const duration = 0.6;
 
       gsap.timeline()
           .add("close")
@@ -388,6 +398,8 @@ $( document ).ready(function() {
               ease: Expo.easeInOut
           }, "close")
           .add(() => {
+
+            
               //document.body.classList.remove("project-active");
               //$(".proj-cont").addClass("project-active");
               document.getElementById("project-page").classList.remove("project-active");
