@@ -248,7 +248,7 @@ h1 {
  #projects .project-item:nth-child(3) {
 	 grid-column: span 2;
 }*/
-#proj-mm, #proj-rc,
+#proj-mm, #proj-grc,
 #proj-lldigital, #proj-doodle {
   grid-column: span 2;
 }
@@ -533,6 +533,10 @@ body .project-active #project-page .project-image:before, body .project-active #
 .proj-img-1-6 {
   width: 100%;
   grid-column: 1 / span 6;
+}
+.proj-img-3-10 {
+  width: 100%;
+  grid-column: 3 / span 8;
 }
 .proj-img-4-9 {
   width: 100%;
