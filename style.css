@@ -25,26 +25,6 @@ body {
   margin: 0;
   padding: 40px 40px 0 40px;
   box-sizing: border-box;
-  /*background: linear-gradient(225deg, #d3e4ff, #ffe4b9);
-  background-size: 400% 400%;
-  -webkit-animation: AnimationBG 6s ease infinite;
-  -moz-animation: AnimationBG 6s ease infinite;
-  animation: AnimationBG 6s ease infinite;*/
-}
-@-webkit-keyframes AnimationBG {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
-@-moz-keyframes AnimationBG {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
-}
-@keyframes AnimationBG {
-    0%{background-position:0% 48%}
-    50%{background-position:100% 53%}
-    100%{background-position:0% 48%}
 }
 .home-bg-container {
   width: 100%;
@@ -78,8 +58,8 @@ body {
 }
 .shape-bg-2 {
   position: absolute;
-  top: 1200px;
-  left: 500px;
+  top: 0px;
+  left: 0px;
   /*width: 1200px;*/
   width: 88vw;
   opacity: 0;
@@ -740,5 +720,62 @@ body .project-active #project-page .project-image:before, body .project-active #
 
 /*stile responsive*/
 @media only screen and (max-width: 768px) {
+
+  .home-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    box-sizing: border-box;
+  }
+  .bg-animation {
+    width: 200%;
+    height: 150%;
+    position: absolute;
+    /*top: 0;
+    left: 0;*/
+  }
+  .shape-bg-1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    /*width: 1200px;*/
+    width: auto;
+    height: 88vh;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity 1s ease-out;
+  }
+  .shape-bg-2 {
+    position: absolute;
+    top: 1200px;
+    left: 500px;
+    width: auto;
+    height: 88vh;
+    opacity: 0;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: opacity 1s ease-out;
+  }
+  .shape-bg-3 {
+    position: absolute;
+    top: 700px;
+    left: 200px;
+    width: auto;
+    height: 88vh;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity 1s ease-out;
+  }
+  .home-container p {
+    margin: 0 0 22px 0;
+    font-size: 22px;
+    line-height: 28px;
+    color: white;
+    mix-blend-mode: difference;
+  }
 
 }

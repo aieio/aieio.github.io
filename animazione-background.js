@@ -16,6 +16,7 @@ function AnimazioneSfondo () {
   section.style.width = widthLimite;
 
   // Logo moving velocity Variables
+  //posizioni iniziali
   let xPosition = 10;
   let yPosition = 10;
 
@@ -24,6 +25,12 @@ function AnimazioneSfondo () {
 
   let x3Position = 700;
   let y3Position = 200;
+
+  //genero posizioni random
+  if(isDesktop()){
+    //larghezza sarà di 88vw
+    
+  }
 
   $(".shape-bg-1").css('opacity',1);
   $(".shape-bg-2").css('opacity',1);
