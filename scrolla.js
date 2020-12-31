@@ -1,45 +1,78 @@
-$( document ).ready(function() {
+function Scrollino () {
+  var destinazioneScroll = $('#homesection').outerHeight();
 
-/*
-  var action = gsap.set('#project-page h2.project-title', {position:'fixed', color:'red', paused:true});
-
-  ScrollTrigger.create({
-    trigger: "#project-page",
-    start: "top top",
-    end: "bottom 150px",
-    onEnter: () => action.play(),
-    onLeave: () => action.reverse(),
-    onLeaveBack: () => action.reverse(),
-    onEnterBack: () => action.play(),
-    markers:true
+  //se clicco su scroll vado alla sezione progetti
+  $(".scroll-more-btn").click(function() {
+    $('html,body').animate({
+        //scrollTop: $("#projects").offset().top
+        scrollTop: destinazioneScroll
+      },1000);
   });
 
-*/
+  //nuovo test scroll down
+  //scroll direction
+  var positionScrollInitial = $(window).scrollTop();
+  var scrollDownCheck = false;
+  var overMouseCheck = false;
 
-/*
-  const vartmp = document.getElementById("project-page");
-  const titleProject = vartmp.querySelectorAll(".project-title");
+  //is scrolling check
+  // Setup isScrolling variable
+  var isScrolling;
+  var isScrollingCheck = false;
 
-  var targettino = $("#project-page h2.project-title");
-  console.log("questo è il target dell'animazione");
-  console.log(targettino);
-  var triggerino = $(".clone");
-  console.log("questo è il triggerino dell'animazione");
-  console.log(triggerino);
+  // Listen for scroll events
+  window.addEventListener('scroll', function ( event ) {
 
-  var action = gsap.set(targettino, {position:'fixed', color:'red', paused:true});
+    // Clear our timeout throughout the scroll
+    window.clearTimeout( isScrolling );
+    isScrollingCheck = true;
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function() {
+
+      // Run the callback
+      console.log( 'Scrolling has stopped.' );
+      isScrollingCheck = false;
+
+    }, 66);
+
+  }, false);
 
 
-
-  ScrollTrigger.create({
-    trigger: triggerino,
-    start: "top top",
-    end: "bottom 200px",
-    onEnter: () => action.play(),
-    onLeave: () => action.reverse(),
-    onLeaveBack: () => action.reverse(),
-    onEnterBack: () => action.reverse(),
-    markers:true
+  //scroll check direction
+  window.addEventListener('wheel', function(event)
+  {
+   if (event.deltaY < 0)
+   {
+    console.log('scrolling up');
+    scrollDownCheck = false;
+   }
+   else if (event.deltaY > 0)
+   {
+    console.log('scrolling down');
+    scrollDownCheck = true;
+   }
   });
-*/
-});
+
+  $('.home-container').hover(function() {
+    overMouseCheck = true;
+    console.log("sono sul trigger");
+  }, function() {
+    overMouseCheck = false;
+    console.log("non sono sul trigger");
+  });
+
+
+  $(window).scroll(function() {
+    if(scrollDownCheck && overMouseCheck && isScrollingCheck ){
+      $('html,body').animate({
+          //scrollTop: $("#projects").offset().top
+          scrollTop: destinazioneScroll
+        }, 1000);
+      overMouseCheck = false;
+      scrollDownCheck = false;
+      positionScrollInitial = 0;
+      console.log("eccola la condizione giusta");
+
+    }
+  });
+};

@@ -1,10 +1,11 @@
-$( document ).ready(function() {
+//$( document ).ready(function() {
+function AnimazioneSfondo () {
   const section = document.querySelector(".bg-animation");
 
   const logo = document.querySelector(".shape-bg-1");
   const logo2 = document.querySelector(".shape-bg-2");
   const logo3 = document.querySelector(".shape-bg-3");
-  $(".shape-bg-1").css('opacity',1);
+  //$(".shape-bg-1").css('opacity',1);
 
   const FPS = 60;
 
@@ -88,95 +89,5 @@ $( document ).ready(function() {
       update();
       window.requestAnimationFrame(prepareUpdate);
   }
-
-  //var widthLimite = $('.bg-animation').outerWidth();
-  //var heightLimite = $('.bg-animation').outerHeight();
-
-  /*
-  //funzione alternativa di prova
-  (function animasfondo(){
-
-    if (xPosition + logo.clientWidth >= widthLimite || xPosition <= 0) {
-      xSpeed = -xSpeed;
-    }
-    if (yPosition + logo.clientHeight >= heightLimite || yPosition <= 0) {
-      ySpeed = -ySpeed;
-    }
-    //shape2
-    if (x2Position + logo2.clientWidth >= widthLimite || x2Position <= 0) {
-      x2Speed = -x2Speed;
-    }
-    if (y2Position + logo2.clientHeight >= heightLimite || y2Position <= 0) {
-      y2Speed = -y2Speed;
-    }
-    //shape3
-    if (x3Position + logo3.clientWidth >= widthLimite || x3Position <= 0) {
-      x3Speed = -x3Speed;
-    }
-    if (y3Position + logo3.clientHeight >= heightLimite || y3Position <= 0) {
-      y3Speed = -y3Speed;
-    }
-
-
-
-    xPosition += xSpeed;
-    yPosition += ySpeed;
-
-    x2Position += x2Speed;
-    y2Position += y2Speed;
-
-    x3Position += x3Speed;
-    y3Position += y3Speed;
-
-    update();
-
-     setTimeout(animasfondo, 1000 / FPS);
-
-   })();*/
-
-   /*
-  setInterval(() => {
-    if (xPosition + logo.clientWidth >= widthLimite || xPosition <= 0) {
-      xSpeed = -xSpeed;
-    }
-    if (yPosition + logo.clientHeight >= heightLimite || yPosition <= 0) {
-      ySpeed = -ySpeed;
-    }
-    //shape2
-    if (x2Position + logo2.clientWidth >= widthLimite || x2Position <= 0) {
-      x2Speed = -x2Speed;
-    }
-    if (y2Position + logo2.clientHeight >= heightLimite || y2Position <= 0) {
-      y2Speed = -y2Speed;
-    }
-    //shape3
-    if (x3Position + logo3.clientWidth >= widthLimite || x3Position <= 0) {
-      x3Speed = -x3Speed;
-    }
-    if (y3Position + logo3.clientHeight >= heightLimite || y3Position <= 0) {
-      y3Speed = -y3Speed;
-    }
-
-
-
-    xPosition += xSpeed;
-    yPosition += ySpeed;
-
-    x2Position += x2Speed;
-    y2Position += y2Speed;
-
-    x3Position += x3Speed;
-    y3Position += y3Speed;
-
-    update();
-  }, 1000 / FPS);*/
-
-  /*
-  window.addEventListener("resize", () => {
-    xPosition = 10;
-    yPosition = 10;
-
-    section.style.height = window.innerHeight + "px";
-    section.style.width = window.innerWidth + "px";
-  });*/
-});
+};
+//});

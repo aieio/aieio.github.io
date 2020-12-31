@@ -5,6 +5,7 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
+    /*
     var destinazioneScroll = $('#homesection').outerHeight();
 
     //se clicco su scroll vado alla sezione progetti
@@ -93,7 +94,7 @@ $( document ).ready(function() {
         console.log("eccola la condizione giusta");
 
       }
-    });
+    });*/
 
     /*
     $(".scroll-more").hover(function(){

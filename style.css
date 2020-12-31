@@ -547,6 +547,14 @@ body .project-active #project-page .project-image:before, body .project-active #
   width: 100%;
   grid-column: 2 / span 10;
 }
+.proj-img-2-6 {
+  width: 100%;
+  grid-column: 2 / span 5;
+}
+.proj-img-7-11 {
+  width: 100%;
+  grid-column: 7 / span 5;
+}
 .proj-img-7-12 {
   width: 100%;
   grid-column: 7 / span 6;
@@ -558,6 +566,10 @@ body .project-active #project-page .project-image:before, body .project-active #
 .proj-img-1-12 {
   width: 100%;
   grid-column: 1 / span 12;
+}
+.proj-img-2-12 {
+  width: 100%;
+  grid-column: 2 / span 11;
 }
 .proj-img-1-4 {
   width: 100%;
@@ -582,6 +594,14 @@ body .project-active #project-page .project-image:before, body .project-active #
   line-height: 1.2;
   font-weight: 400;
   padding: 60px 0;
+  color: black;
+}
+.oi-video-title {
+  width: 100%;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 400;
+  padding: 40px 0 20px;
   color: black;
 }
 .icon-2 {
@@ -630,6 +650,15 @@ body .project-active #project-page .project-image:before, body .project-active #
 .oi-screen-page-4 {
   background-color: #FFD0E6;
   grid-row-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.land-print-page {
+  background-color: black;
+  padding: 40px 0;
+}
+.land-print-page-2 {
+  background-color: black;
   padding-top: 40px;
   padding-bottom: 40px;
 }
