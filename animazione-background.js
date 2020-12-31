@@ -29,7 +29,21 @@ function AnimazioneSfondo () {
   //genero posizioni random
   if(isDesktop()){
     //larghezza sarà di 88vw
-    
+    console.log("siamo su desktop e ora assegno le coordinate");
+    xPosition = randomXCoordinateDesk();
+    yPosition = randomYCoordinateDesk();
+    x2Position = randomXCoordinateDesk();
+    y2Position = randomYCoordinateDesk();
+    x3Position = randomXCoordinateDesk();
+    y3Position = randomYCoordinateDesk();
+  } else {
+    console.log("siamo su mobile e ora assegno le coordinate");
+    xPosition = randomXCoordinateMob();
+    yPosition = randomYCoordinateMob();
+    x2Position = randomXCoordinateMob();
+    y2Position = randomYCoordinateMob();
+    x3Position = randomXCoordinateMob();
+    y3Position = randomYCoordinateMob();
   }
 
   $(".shape-bg-1").css('opacity',1);
@@ -97,4 +111,21 @@ function AnimazioneSfondo () {
       window.requestAnimationFrame(prepareUpdate);
   }
 };
+
+function randomXCoordinateDesk() {
+  var limiteCoordinate = $( window ).width() / 5 * 4;
+  return Math.floor(Math.random() * limiteCoordinate) + 0;
+}
+function randomYCoordinateDesk() {
+  var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  return Math.floor(Math.random() * limiteCoordinate) + 0;
+}
+function randomXCoordinateMob() {
+  var limiteCoordinate = $( window ).width() / 5 * 4;
+  return Math.floor(Math.random() * limiteCoordinate) + 0;
+}
+function randomYCoordinateMob() {
+  var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  return Math.floor(Math.random() * limiteCoordinate) + 0;
+}
 //});

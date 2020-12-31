@@ -730,7 +730,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     box-sizing: border-box;
   }
   .bg-animation {
-    width: 200%;
+    width: 150%;
     height: 150%;
     position: absolute;
     /*top: 0;
@@ -738,8 +738,8 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
   .shape-bg-1 {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
     /*width: 1200px;*/
     width: auto;
     height: 88vh;
@@ -750,8 +750,8 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
   .shape-bg-2 {
     position: absolute;
-    top: 1200px;
-    left: 500px;
+    top: 0px;
+    left: 0px;
     width: auto;
     height: 88vh;
     opacity: 0;
@@ -761,8 +761,8 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
   .shape-bg-3 {
     position: absolute;
-    top: 700px;
-    left: 200px;
+    top: 0px;
+    left: 0px;
     width: auto;
     height: 88vh;
     opacity: 0;
