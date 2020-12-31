@@ -621,6 +621,18 @@ body .project-active #project-page .project-image:before, body .project-active #
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.oi-screen-page-3 {
+  background-color: #B5C603;
+  grid-row-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.oi-screen-page-4 {
+  background-color: #FFD0E6;
+  grid-row-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 /* project video preview*/
 
 .project-video-preview-container {
