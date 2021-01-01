@@ -9,70 +9,78 @@ function Scrollino () {
       },1000);
   });
 
-  //nuovo test scroll down
-  //scroll direction
-  var positionScrollInitial = $(window).scrollTop();
-  var scrollDownCheck = false;
-  var overMouseCheck = false;
+  /*
+  if(isDesktop) {
+    //nuovo test scroll down
+    //scroll direction
+    var positionScrollInitial = $(window).scrollTop();
+    var scrollDownCheck = false;
+    var overMouseCheck = false;
 
-  //is scrolling check
-  // Setup isScrolling variable
-  var isScrolling;
-  var isScrollingCheck = false;
+    //is scrolling check
+    // Setup isScrolling variable
+    var isScrolling;
+    var isScrollingCheck = false;
 
-  // Listen for scroll events
-  window.addEventListener('scroll', function ( event ) {
+    // Listen for scroll events
+    window.addEventListener('scroll', function ( event ) {
 
-    // Clear our timeout throughout the scroll
-    window.clearTimeout( isScrolling );
-    isScrollingCheck = true;
-    // Set a timeout to run after scrolling ends
-    isScrolling = setTimeout(function() {
+      // Clear our timeout throughout the scroll
+      window.clearTimeout( isScrolling );
+      isScrollingCheck = true;
+      // Set a timeout to run after scrolling ends
+      isScrolling = setTimeout(function() {
 
-      // Run the callback
-      console.log( 'Scrolling has stopped.' );
-      isScrollingCheck = false;
+        // Run the callback
+        console.log( 'Scrolling has stopped.' );
+        isScrollingCheck = false;
 
-    }, 66);
+      }, 66);
 
-  }, false);
-
-
-  //scroll check direction
-  window.addEventListener('wheel', function(event)
-  {
-   if (event.deltaY < 0)
-   {
-    console.log('scrolling up');
-    scrollDownCheck = false;
-   }
-   else if (event.deltaY > 0)
-   {
-    console.log('scrolling down');
-    scrollDownCheck = true;
-   }
-  });
-
-  $('.home-container').hover(function() {
-    overMouseCheck = true;
-    console.log("sono sul trigger");
-  }, function() {
-    overMouseCheck = false;
-    console.log("non sono sul trigger");
-  });
+    }, false);
 
 
-  $(window).scroll(function() {
-    if(scrollDownCheck && overMouseCheck && isScrollingCheck ){
-      $('html,body').animate({
-          //scrollTop: $("#projects").offset().top
-          scrollTop: destinazioneScroll
-        }, 1000);
+    //scroll check direction
+    window.addEventListener('wheel', function(event)
+    {
+     if (event.deltaY < 0)
+     {
+      console.log('scrolling up');
+      //scrollDownCheck = false;
+     }
+     else if (event.deltaY > 0)
+     {
+      console.log('scrolling down');
+      //scrollDownCheck = true;
+     }
+    });
+
+    $('.home-container').hover(function() {
+      overMouseCheck = true;
+      //console.log("sono sul trigger");
+    }, function() {
       overMouseCheck = false;
-      scrollDownCheck = false;
-      positionScrollInitial = 0;
-      console.log("eccola la condizione giusta");
+      //console.log("non sono sul trigger");
+    });
+    */
 
-    }
-  });
+
+    /*
+    //metedo per l'autoscroll
+    $(window).scroll(function() {
+      if(scrollDownCheck && overMouseCheck && isScrollingCheck ){
+        $('html,body').animate({
+            //scrollTop: $("#projects").offset().top
+            scrollTop: destinazioneScroll
+          }, 1000);
+        overMouseCheck = false;
+        scrollDownCheck = false;
+        positionScrollInitial = 0;
+        console.log("eccola la condizione giusta");
+
+      }
+    });
+   */
+
+  }
 };

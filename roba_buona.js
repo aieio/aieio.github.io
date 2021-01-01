@@ -1,31 +1,8 @@
 $( document ).ready(function() {
     console.log( "ready!" );
 
-    //video appare on hover
-    $("#projects h2.project-title").hover(
-      function() {
-        var $variabilinaAppogg = $(this).parent();
-        $variabilinaAppogg.find(".proj-video-preview").addClass( "show-video-preview" );
-        console.log("mouse sul titolo");
-      },
-      function() {
-        var $variabilinaAppogg = $(this).parent();
-        $variabilinaAppogg.find(".proj-video-preview").removeClass( "show-video-preview" );
-        console.log("mouse fuori dal titolo");
-      }
-    );
-    $("#projects h2.project-subtitle").hover(
-      function() {
-        var $variabilinaAppogg = $(this).parent();
-        $variabilinaAppogg.find(".proj-video-preview").addClass( "show-video-preview" );
-        console.log("mouse sul titolo");
-      },
-      function() {
-        var $variabilinaAppogg = $(this).parent();
-        $variabilinaAppogg.find(".proj-video-preview").removeClass( "show-video-preview" );
-        console.log("mouse fuori dal titolo");
-      }
-    );
+
+
 
 
 
@@ -153,5 +130,74 @@ function isDesktop() {
   }else {
     console.log("siamo su mobile");
     return false;
+  }
+}
+function videoPreviewMobile(){
+  var limiteBasso = $( window ).innerHeight();
+  var limitealtezzavideo = $( window ).innerHeight() - 150;
+  if($(".project-item").position().top < limiteBasso && $(".project-item").position().top > limitealtezzavideo){
+    console.log("questo è this");
+    console.log(this);
+    console.log("qui il video dovrebbe partire");
+  } else {
+    console.log("non rientri nella condizione");
+  }
+}
+function videoProjectsPreview() {
+  //video appare on hover
+  // solo su desktop
+  if(isDesktop()){
+    $("#projects h2.project-title").hover(
+      function() {
+        var $variabilinaAppogg = $(this).parent();
+        $variabilinaAppogg.find(".proj-video-preview").addClass( "show-video-preview" );
+        console.log("mouse sul titolo");
+      },
+      function() {
+        var $variabilinaAppogg = $(this).parent();
+        $variabilinaAppogg.find(".proj-video-preview").removeClass( "show-video-preview" );
+        console.log("mouse fuori dal titolo");
+      }
+    );
+    $("#projects h2.project-subtitle").hover(
+      function() {
+        var $variabilinaAppogg = $(this).parent();
+        $variabilinaAppogg.find(".proj-video-preview").addClass( "show-video-preview" );
+        console.log("mouse sul titolo");
+      },
+      function() {
+        var $variabilinaAppogg = $(this).parent();
+        $variabilinaAppogg.find(".proj-video-preview").removeClass( "show-video-preview" );
+        console.log("mouse fuori dal titolo");
+      }
+    );
+  } else {
+    //preview video su Mobile
+    var actionProj1 = gsap.set('#projects #proj-madre .proj-video-preview', {display:'flex', paused:true});
+    var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {display:'flex', paused:true});
+
+
+    ScrollTrigger.create({
+              trigger: "#projects #proj-madre",
+              start: "top center",
+              end: "bottom center",
+              onEnter: function(){ actionProj1.play();},
+              onLeave: function(){ actionProj1.reverse();},
+              onLeaveBack: function(){ actionProj1.reverse();},
+              onEnterBack: function(){ actionProj1.play();},
+              markers:true
+            });
+   ScrollTrigger.create({
+                      trigger: "#projects #proj-italics",
+                      start: "top center",
+                      end: "bottom center",
+                      onEnter: function(){ actionProj2.play();},
+                      onLeave: function(){ actionProj2.reverse();},
+                      onLeaveBack: function(){ actionProj2.reverse();},
+                      onEnterBack: function(){ actionProj2.play();},
+                      markers:true
+                    });
+
+
   }
 }
