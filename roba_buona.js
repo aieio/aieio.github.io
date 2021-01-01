@@ -203,10 +203,10 @@ function videoProjectsPreview() {
                                        trigger: "#projects #proj-gs1",
                                        start: "top center",
                                        end: "bottom center",
-                                       onEnter: function(){ actionProj2.play();},
-                                       onLeave: function(){ actionProj2.reverse();},
-                                       onLeaveBack: function(){ actionProj2.reverse();},
-                                       onEnterBack: function(){ actionProj2.play();},
+                                       onEnter: function(){ actionProj3.play();},
+                                       onLeave: function(){ actionProj3.reverse();},
+                                       onLeaveBack: function(){ actionProj3.reverse();},
+                                       onEnterBack: function(){ actionProj3.play();},
                                        markers:true
                                      });
 
