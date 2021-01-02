@@ -114,10 +114,14 @@ $( document ).ready(function() {
       console.log("questa è l'altezza del paragrafo: " + paragrafetto.height() );
       //const bottomParagrafo = $(window).height() - positionParagrafo.top - paragrafetto.height();
 
+      //refresh triggerin
+      ScrollTrigger.refresh();
+      console.log("refreshatooo!");
 
       //rimuovo la classe con il video
       $("#project-page .proj-video-preview").removeClass( "show-video-preview" );
-
+      //metto il video a display none
+      $("#project-page .proj-video-preview").css("display", "none");
 
       gsap.timeline()
       .to(clone, {
@@ -336,6 +340,7 @@ $( document ).ready(function() {
 
       const destinazioneScrollBack = $('#homesection').outerHeight();
 
+
       gsap.timeline()
           .add("close")
           .to(clone, {
@@ -369,6 +374,10 @@ $( document ).ready(function() {
 
               //rimuovo la classe per mettere in evidenza la sezione projects
               $("#projects").removeClass("projects-area-active");
+
+              //refresh triggerin
+              ScrollTrigger.refresh();
+              console.log("refreshatooo!");
           });
   }
   function onProjectCloseFast() {
@@ -385,6 +394,10 @@ $( document ).ready(function() {
       const websiteProggett = clone.querySelector(".project-website");
       //nomeProggett.style.opacity = "0";
       //subProggett.style.opacity = "0";
+
+      //refresh triggerin
+      ScrollTrigger.refresh();
+      console.log("refreshatooo!");
 
       gsap.timeline()
           .add("close")
