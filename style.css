@@ -972,6 +972,7 @@ body .project-active #project-page .project-image:before, body .project-active #
      position: absolute;
      top: 40px;
      left: 15px;
+     max-width: 80%;
   }
   .project-close {
     opacity: 0;
@@ -980,11 +981,12 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-weight: 400;
     color: white;
     mix-blend-mode: difference;
-    font-size: 34px;
+    font-size: 24px;
     text-align: end;
     /* width: 100%; */
-    top: 80px;
-    right: 40px;
+    top: auto;
+    bottom: 15px;
+    right: 15px;
     z-index: 2;
     transition: opacity 0.3s ease-out;
   }
@@ -1009,7 +1011,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     opacity: 0;
     pointer-events: none;
     /*width: 100%;*/
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 300;
     color: white !important;
     text-decoration: underline;
@@ -1063,10 +1065,10 @@ body .project-active #project-page .project-image:before, body .project-active #
   /*content project*/
   .grid-content-page {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
     padding: 0 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
   }
   .full-content {
@@ -1082,117 +1084,117 @@ body .project-active #project-page .project-image:before, body .project-active #
     padding-top: 40px;
   }
   .row-1 .title {
-    grid-column: 2 / 6;
+    grid-column: 1 / 2;
   }
   .project-description {
     font-family: Times, helvetica, arial, sans-serif;
     font-family: 'Fraunces-Light', Arial, sans-serif;
     /*font-style: italic;*/
     font-weight: 300;
-    font-size: 18px;
-    line-height: 26px;
-    grid-column: 8 / span 5;
-    margin-top: 220px;
-    margin-bottom: 80px;
+    font-size: 15px;
+    line-height: 24px;
+    grid-column: 1 / span 2;
+    margin-top: 240px;
+    margin-bottom: 50px;
   }
   .video-padding {
     padding: 30px 0;
   }
   .proj-img-1-5 {
     width: 100%;
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-1-4 {
     width: 100%;
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 2;
   }
   .proj-img-6-10 {
     width: 100%;
-    grid-column: 6 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-6-12 {
     width: 100%;
-    grid-column: 6 / span 7;
+    grid-column: 1 / span 2;
   }
   .proj-img-1-6 {
     width: 100%;
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 2;
   }
   .proj-img-3-7 {
     width: 100%;
-    grid-column: 3 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-5-8 {
     width: 100%;
-    grid-column: 5 / span 4;
+    grid-column: 1 / span 2;
   }
   .proj-img-8-12 {
     width: 100%;
-    grid-column: 8 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-9-12 {
     width: 100%;
-    grid-column: 8 / span 4;
+    grid-column: 1 / span 2;
   }
   .proj-img-3-10 {
     width: 100%;
-    grid-column: 3 / span 8;
+    grid-column: 1 / span 2;
   }
   .proj-img-4-9 {
     width: 100%;
-    grid-column: 4 / span 6;
+    grid-column: 1 / span 2;
   }
   .proj-img-2-11 {
     width: 100%;
-    grid-column: 2 / span 10;
+    grid-column: 1 / span 2;
   }
   .proj-img-2-6 {
     width: 100%;
-    grid-column: 2 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-7-11 {
     width: 100%;
-    grid-column: 7 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-7-12 {
     width: 100%;
-    grid-column: 7 / span 6;
+    grid-column: 1 / span 2;
   }
   .proj-img-5-12 {
     width: 100%;
-    grid-column: 5 / span 8;
+    grid-column: 1 / span 2;
   }
   .proj-img-1-12 {
     width: 100%;
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 2;
   }
   .proj-img-2-12 {
     width: 100%;
-    grid-column: 2 / span 11;
+    grid-column: 1 / span 2;
   }
   .proj-img-1-4 {
     width: 100%;
-    grid-column: 1 / span 4;
+    grid-column: 1 / span 2;
   }
   .proj-img-1-5 {
     width: 100%;
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 2;
   }
   .proj-img-5-8 {
     width: 100%;
-    grid-column: 5 / span 4;
+    grid-column: 1 / span 2;
   }
   .proj-img-9-12 {
     width: 100%;
-    grid-column: 9 / span 4;
+    grid-column: 1 / span 2;
   }
   .closing-proj-text {
     width: 100%;
-    grid-column: 1 / span 12;
-    font-size: 42px;
+    grid-column: 1 / span 2;
+    font-size: 22px;
     line-height: 1.2;
     font-weight: 400;
-    padding: 60px 0;
+    padding: 25px 0;
     color: black;
   }
   .oi-video-title {
