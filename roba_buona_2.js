@@ -114,9 +114,11 @@ $( document ).ready(function() {
       console.log("questa è l'altezza del paragrafo: " + paragrafetto.height() );
       //const bottomParagrafo = $(window).height() - positionParagrafo.top - paragrafetto.height();
 
-      //refresh triggerin
-      ScrollTrigger.refresh();
-      console.log("refreshatooo!");
+      //refresh triggerin solo su Mobile
+      if(!isDesktop()){
+        ScrollTrigger.refresh();
+        console.log("refreshatooo!");
+      }
 
       //rimuovo la classe con il video
       $("#project-page .proj-video-preview").removeClass( "show-video-preview" );
@@ -375,9 +377,11 @@ $( document ).ready(function() {
               //rimuovo la classe per mettere in evidenza la sezione projects
               $("#projects").removeClass("projects-area-active");
 
-              //refresh triggerin
-              ScrollTrigger.refresh();
-              console.log("refreshatooo!");
+              //refresh triggerin solo su Mobile
+              if(!isDesktop()){
+                ScrollTrigger.refresh();
+                console.log("refreshatooo!");
+              }
           });
   }
   function onProjectCloseFast() {
