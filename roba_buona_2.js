@@ -1,3 +1,8 @@
+document.addEventListener('lazyloaded', function(e){
+  ScrollTrigger.refresh();
+  console.log("refreshatooo!");
+});
+
 $( document ).ready(function() {
 
   //prova per rc
@@ -338,6 +343,7 @@ $( document ).ready(function() {
               height: "0vh",
               minHeight: "0vh",
               padding: "0",
+              opacity: "0",
               ease: Expo.easeInOut,
               onComplete() {
                   clone.remove();
@@ -373,6 +379,13 @@ $( document ).ready(function() {
       const projectContent = clone.querySelector(".project-content");
       const duration = 0.6;
 
+      const nomeProggett = clone.querySelector(".project-title");
+      const tutteCos = clone.querySelector(".project-item");
+      const subProggett = clone.querySelector(".project-subtitle");
+      const websiteProggett = clone.querySelector(".project-website");
+      //nomeProggett.style.opacity = "0";
+      //subProggett.style.opacity = "0";
+
       gsap.timeline()
           .add("close")
           .to(clone, {
@@ -380,10 +393,21 @@ $( document ).ready(function() {
               height: "0vh",
               minHeight: "0vh",
               padding: "0",
+              opacity: "0",
               ease: Expo.easeInOut,
               onComplete() {
                   clone.remove();
               }
+          }, "close")
+          .to(nomeProggett, {
+              duration,
+              opacity: 0,
+              ease: Expo.easeInOut
+          }, "close")
+          .to(websiteProggett, {
+              duration,
+              opacity: 0,
+              ease: Expo.easeInOut
           }, "close")
           .to(contenutoPagina.children, {
               duration,
@@ -399,7 +423,7 @@ $( document ).ready(function() {
           }, "close")
           .add(() => {
 
-            
+
               //document.body.classList.remove("project-active");
               //$(".proj-cont").addClass("project-active");
               document.getElementById("project-page").classList.remove("project-active");

@@ -1,3 +1,4 @@
+
 const projects = document.getElementById("projects");
 const projectClose = document.getElementById("project-close");
 const projectItems = document.querySelectorAll(".project-item");
@@ -31,10 +32,14 @@ function onProjectClick(event) {
 
     const { target } = event;
     const genitor = target.parentElement;
-    //console.log("ecco il target cos'è");
-    //console.log(target);
-    //console.log("ed ecco il parent");
-    //console.log(genitor);
+    console.log("ecco il target cos'è");
+    console.log(target);
+    console.log("ed ecco il parent");
+    console.log(genitor);
+    console.log("rimuvo la classe incriminata");
+    genitor.classList.remove('show-video-preview');
+    console.log(genitor);
+
 
     //old
     //const { index } = target.dataset;

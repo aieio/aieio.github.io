@@ -18,6 +18,18 @@ body {
   overflow-x: hidden;
 }
 
+.footer-container {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+}
 .home-container {
   width: 100%;
   height: 100%;
@@ -45,7 +57,24 @@ body {
   /*top: 0;
   left: 0;*/
 }
-.shape-bg-1 {
+.footer-bg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+}
+.footer-bg-animation {
+  width: 180%;
+  height: 250vh;
+  position: absolute;
+}
+.shape-bg-1, .shape-bg-1-footer {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -56,7 +85,7 @@ body {
   mix-blend-mode: difference;
   transition: opacity 1s ease-out;
 }
-.shape-bg-2 {
+.shape-bg-2, .shape-bg-2-footer {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -67,7 +96,7 @@ body {
   pointer-events: none;
   transition: opacity 1s ease-out;
 }
-.shape-bg-3 {
+.shape-bg-3, .shape-bg-3-footer {
   position: absolute;
   top: 700px;
   left: 200px;
@@ -80,11 +109,14 @@ body {
 }
 
 
-.home-container p {
+.home-container p,
+.footer-container p {
   margin: 0 0 48px 0;
   font-size: 34px;
   line-height: 40px;
   max-width: 1000px;
+  z-index: 9;
+  position: relative;
   color: white;
   mix-blend-mode: difference;
 }
@@ -95,22 +127,24 @@ body {
   color: inherit !important;
   text-decoration: underline;
 }
-#copy-link {
+#copy-link, #copy-link-footer {
   /*display: none;*/
   opacity: 0;
   transition: opacity 1s easeInOut;
   -webkit-transition: all 0.25s;
 }
-#mail-icon {
+#mail-icon, #mail-icon-footer {
   cursor: pointer;
   width: 18px;
 }
-#mail-icon:hover + #copy-link {
+#mail-icon:hover + #copy-link,
+#mail-icon-footer:hover + #copy-link-footer {
   /*display: inline;*/
   opacity: 1 !important;
 }
 .arrow-scroll-more {
   width: 28px;
+  z-index: 9;
   mix-blend-mode: difference;
 }
 .scroll-more-btn {
@@ -121,8 +155,41 @@ body {
   opacity: 1 !important;
 
 }
-
-
+.social-footer a {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  z-index: 9;
+  color: white;
+  mix-blend-mode: difference;
+}
+p.credits-footer {
+  margin: 20px 0 0 0;
+  font-size: 14px;
+  line-height: 20px;
+}
+.footer-container .scroll-up {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  color: white;
+  mix-blend-mode: difference;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  z-index: 9;
+}
+.scroll-up .scroll-up-btn {
+  margin: 0 20px 0 0;
+}
+.arrow-scroll-up {
+  width: 28px;
+  top: -10px;
+  position: relative;
+  animation: slide-arrow-more 1s ease-in-out infinite;
+  mix-blend-mode: difference;
+}
 
 /*stile per progetti*/
  :root {
@@ -271,7 +338,7 @@ h1 {
 	 position: relative;
 }
  .project-content {
-	 /*display: none;*/
+	 display: none;
    width: 100%;
 	 opacity: 0;
 	 pointer-events: none;

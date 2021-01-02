@@ -8,6 +8,13 @@ function Scrollino () {
         scrollTop: destinazioneScroll
       },1000);
   });
+  //se clicco su back to top vado alla sezione progetti
+  $(".scroll-up").click(function() {
+    $('html,body').animate({
+        //scrollTop: $("#projects").offset().top
+        scrollTop: 0
+      },1000);
+  });
 
   /*
   if(isDesktop) {
@@ -80,7 +87,8 @@ function Scrollino () {
 
       }
     });
-   */
+    */
 
-  }
+
+  //}
 };

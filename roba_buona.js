@@ -1,11 +1,6 @@
+
 $( document ).ready(function() {
     console.log( "ready!" );
-
-
-
-
-
-
 
     //mail icon copia indirizzo mail
     $("#mail-icon").click(function(){
@@ -121,6 +116,24 @@ $( document ).ready(function() {
 
 
 });
+//funzione per il bravo footer
+function bravoFooter(){
+  //mail icon copia indirizzo mail
+  $("#mail-icon-footer").click(function(){
+    console.log("cliccato sull'icona");
+    var mail_address = document.createElement("input");
+    mail_address.value = "huiling.li.cn@gmail.com";
+    document.body.appendChild(mail_address);
+    mail_address.select();
+    document.execCommand("Copy");
+    mail_address.remove();
+    console.log( "ho copiato la mail e mo cambio pure il messaggio" );
+    $("#copy-link-footer").html(" bravo!");
+    $("#copy-link-footer").addClass("bravo-on");
+  });
+}
+
+
 
 //funzione per il responsive
 function isDesktop() {
@@ -130,17 +143,6 @@ function isDesktop() {
   }else {
     console.log("siamo su mobile");
     return false;
-  }
-}
-function videoPreviewMobile(){
-  var limiteBasso = $( window ).innerHeight();
-  var limitealtezzavideo = $( window ).innerHeight() - 150;
-  if($(".project-item").position().top < limiteBasso && $(".project-item").position().top > limitealtezzavideo){
-    console.log("questo è this");
-    console.log(this);
-    console.log("qui il video dovrebbe partire");
-  } else {
-    console.log("non rientri nella condizione");
   }
 }
 function videoProjectsPreview() {
