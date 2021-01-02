@@ -179,6 +179,8 @@ function videoProjectsPreview() {
     var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {display:'flex', paused:true});
     var actionProj3 = gsap.set('#projects #proj-gs1 .proj-video-preview', {display:'flex', paused:true});
     var actionProj4 = gsap.set('#projects #proj-grc .proj-video-preview', {display:'flex', paused:true});
+    var actionProj5 = gsap.set('#projects #proj-land .proj-video-preview', {display:'flex', paused:true});
+    var actionProj6 = gsap.set('#projects #proj-mm .proj-video-preview', {display:'flex', paused:true});
 
 
 
@@ -190,7 +192,7 @@ function videoProjectsPreview() {
               onLeave: function(){ actionProj1.reverse();},
               onLeaveBack: function(){ actionProj1.reverse();},
               onEnterBack: function(){ actionProj1.play();},
-              markers:true
+              markers:false
             });
    ScrollTrigger.create({
                       trigger: "#projects #proj-italics",
@@ -200,7 +202,7 @@ function videoProjectsPreview() {
                       onLeave: function(){ actionProj2.reverse();},
                       onLeaveBack: function(){ actionProj2.reverse();},
                       onEnterBack: function(){ actionProj2.play();},
-                      markers:true
+                      markers:false
                     });
    ScrollTrigger.create({
                                        trigger: "#projects #proj-gs1",
@@ -210,7 +212,7 @@ function videoProjectsPreview() {
                                        onLeave: function(){ actionProj3.reverse();},
                                        onLeaveBack: function(){ actionProj3.reverse();},
                                        onEnterBack: function(){ actionProj3.play();},
-                                       markers:true
+                                       markers:false
                                      });
   ScrollTrigger.create({
                   trigger: "#projects #proj-grc",
@@ -220,8 +222,28 @@ function videoProjectsPreview() {
                   onLeave: function(){ actionProj4.reverse();},
                   onLeaveBack: function(){ actionProj4.reverse();},
                   onEnterBack: function(){ actionProj4.play();},
-                  markers:true
+                  markers:false
              });
+  ScrollTrigger.create({
+                             trigger: "#projects #proj-land",
+                             start: "top center",
+                             end: "bottom center",
+                             onEnter: function(){ actionProj5.play();},
+                             onLeave: function(){ actionProj5.reverse();},
+                             onLeaveBack: function(){ actionProj5.reverse();},
+                             onEnterBack: function(){ actionProj5.play();},
+                             markers:false
+                        });
+  ScrollTrigger.create({
+                                        trigger: "#projects #proj-mm",
+                                        start: "top center",
+                                        end: "bottom center",
+                                        onEnter: function(){ actionProj6.play();},
+                                        onLeave: function(){ actionProj6.reverse();},
+                                        onLeaveBack: function(){ actionProj6.reverse();},
+                                        onEnterBack: function(){ actionProj6.play();},
+                                        markers:false
+                                   });
 
 
   }
