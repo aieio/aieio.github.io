@@ -178,6 +178,7 @@ function videoProjectsPreview() {
     var actionProj1 = gsap.set('#projects #proj-madre .proj-video-preview', {display:'flex', paused:true});
     var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {display:'flex', paused:true});
     var actionProj3 = gsap.set('#projects #proj-gs1 .proj-video-preview', {display:'flex', paused:true});
+    var actionProj4 = gsap.set('#projects #proj-grc .proj-video-preview', {display:'flex', paused:true});
 
 
 
@@ -211,6 +212,16 @@ function videoProjectsPreview() {
                                        onEnterBack: function(){ actionProj3.play();},
                                        markers:true
                                      });
+  ScrollTrigger.create({
+                  trigger: "#projects #proj-grc",
+                  start: "top center",
+                  end: "bottom center",
+                  onEnter: function(){ actionProj4.play();},
+                  onLeave: function(){ actionProj4.reverse();},
+                  onLeaveBack: function(){ actionProj4.reverse();},
+                  onEnterBack: function(){ actionProj4.play();},
+                  markers:true
+             });
 
 
   }
