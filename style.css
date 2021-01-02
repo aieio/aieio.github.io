@@ -781,13 +781,19 @@ body .project-active #project-page .project-image:before, body .project-active #
 
 
 
-
-
+/*stile solo desktop */
+@media only screen and (min-width: 767px) {
+  .des-hidden {
+    display: none !important;
+  }
+}
 
 
 /*stile responsive*/
 @media only screen and (max-width: 768px) {
-
+  .mob-hidden {
+    display: none !important;
+  }
   .home-container {
     width: 100%;
     height: 100vh;
@@ -801,19 +807,17 @@ body .project-active #project-page .project-image:before, body .project-active #
     height: 100vh;
   }
   .bg-animation {
-    width: 150%;
-    height: 150%;
+    width: 280%;
+    height: 210%;
     position: absolute;
-    /*top: 0;
-    left: 0;*/
   }
   .shape-bg-1 {
     position: absolute;
     top: 0px;
     left: 0px;
     /*width: 1200px;*/
-    width: auto;
-    height: 88vh;
+    width: 190vw;
+    height: auto;
     opacity: 0;
     pointer-events: none;
     mix-blend-mode: difference;
@@ -823,8 +827,8 @@ body .project-active #project-page .project-image:before, body .project-active #
     position: absolute;
     top: 0px;
     left: 0px;
-    width: auto;
-    height: 88vh;
+    width: 190vw;
+    height: auto;
     opacity: 0;
     mix-blend-mode: difference;
     pointer-events: none;
@@ -834,14 +838,15 @@ body .project-active #project-page .project-image:before, body .project-active #
     position: absolute;
     top: 0px;
     left: 0px;
-    width: auto;
-    height: 88vh;
+    width: 190vw;
+    height: auto;
     opacity: 0;
     pointer-events: none;
     mix-blend-mode: difference;
     transition: opacity 1s ease-out;
   }
-  .home-container p {
+  .home-container p,
+  .footer-container p {
     margin: 0 0 22px 0;
     font-size: 22px;
     line-height: 28px;
@@ -855,9 +860,10 @@ body .project-active #project-page .project-image:before, body .project-active #
     transition: opacity 1s easeInOut;
     -webkit-transition: all 0.25s;
   }
-  #mail-icon {
+  #mail-icon, #mail-icon-footer {
     cursor: pointer;
-    width: 12px;
+    width: 14px;
+    margin-left: 2px;
   }
   #mail-icon:hover + #copy-link {
     /*display: inline;*/
@@ -1313,6 +1319,96 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
   .scroll-more .arrow-scroll-more {
     animation: slide-arrow-more 1s ease-in-out infinite;
+  }
+  /*footer*/
+  .footer-container {
+    height: 400px;
+    padding: 15px 15px 80px 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .footer-bg-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+  }
+  .footer-bg-animation {
+    width: 280%;
+    height: 220%;
+    position: absolute;
+  }
+  .social-footer a {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+    z-index: 9;
+    color: white;
+    mix-blend-mode: difference;
+  }
+  p.credits-footer {
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .footer-container .scroll-up {
+    position: absolute;
+    bottom: 15px;
+    right: auto;
+    left: 15px;
+    color: white;
+    mix-blend-mode: difference;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    z-index: 9;
+  }
+  .scroll-up .scroll-up-btn {
+    margin: 0 10px 0 0;
+  }
+  .arrow-scroll-up {
+    width: 18px;
+    top: -10px;
+    position: relative;
+    animation: slide-arrow-more 1s ease-in-out infinite;
+    mix-blend-mode: difference;
+  }
+  .shape-bg-1-footer {
+    position: absolute;
+    width: 190vw;
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity 1s ease-out;
+  }
+  .shape-bg-2-footer {
+    position: absolute;
+    width: 190vw;
+    height: auto;
+    opacity: 0;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: opacity 1s ease-out;
+  }
+  .shape-bg-3-footer {
+    position: absolute;
+    width: 190vw;
+    height: auto;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: opacity 1s ease-out;
   }
 
 }
