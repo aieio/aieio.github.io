@@ -9,9 +9,11 @@ src: url("/fonts/Fraunces9ptSoft-Light.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/*
 html {
   scroll-behavior: smooth;
 }
+*/
 
 body {
   font-family: "Montreal-medium","Helvetica Neue", "helvetica", "arial", sans-serif;
