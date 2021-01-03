@@ -5,7 +5,7 @@ src: url("/fonts/Fraunces9ptSoft-Light.woff2") format("woff");
 }
 @font-face {
   font-family: "Montreal-medium";
-  src: url("/fonts/NeueMontreal-regular.woff") format("woff");
+  src: url("/fonts/NeueMontreal-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -326,10 +326,13 @@ h1 {
   font-size: 34px;
   text-align: end;
   /* width: 100%; */
-  top: 80px;
+  top: 40px;
   right: 40px;
   z-index: 2;
   transition: opacity 0.3s ease-out;
+}
+.project-close img {
+  width: 26px;
 }
  .project-hero {
 	 height: 100%;
@@ -976,7 +979,7 @@ body .project-active #project-page .project-image:before, body .project-active #
      position: absolute;
      top: 40px;
      left: 15px;
-     max-width: 80%;
+     max-width: 100%;
   }
   .project-close {
     opacity: 0;
@@ -988,9 +991,9 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-size: 24px;
     text-align: end;
     /* width: 100%; */
-    top: auto;
-    bottom: 15px;
-    right: 15px;
+    top: 26px;
+    left: 15px;
+    right: auto;
     z-index: 2;
     transition: opacity 0.3s ease-out;
   }

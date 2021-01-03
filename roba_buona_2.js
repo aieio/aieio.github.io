@@ -353,7 +353,7 @@ $( document ).ready(function() {
         }, "scaleFS")
         .to(title, {
             duration: 1.4,
-            left: 15,
+            left: 55,
             fontSize: 38,
             pointerEvents: "none",
             ease: Expo.easeInOut
