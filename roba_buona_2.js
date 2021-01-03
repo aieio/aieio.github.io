@@ -25,6 +25,13 @@ $( document ).ready(function() {
   projectNames.forEach((item) => item.addEventListener("click", onProjectClick));
   projectSubtitles.forEach((item) => item.addEventListener("click", onProjectClick));
 
+  //se siamo su mobile anche i pulsanti diventano cliccabili
+  const projectThumb = document.querySelectorAll(".proj-video-preview");
+
+  if(!isDesktop()){
+    projectThumb.forEach((item) => item.addEventListener("click", onProjectClick));
+  }
+
   //console.log("urcamdimm");
   function onProjectClick(event) {
 
@@ -45,10 +52,21 @@ $( document ).ready(function() {
 
       const { target } = event;
       const genitor = target.parentElement;
-      //console.log("ecco il target cos'è");
-      //console.log(target);
-      //console.log("ed ecco il parent");
-      //console.log(genitor);
+
+      //se mobile
+      /*
+      if(!isDesktop()){
+        const genitor = target;
+        console.log("abbiamo definito il genitor");
+        console.log(genitor);
+      } else {
+        const genitor = target.parentElement;
+      }
+      console.log("ecco il target cos'è");
+      console.log(target);
+      console.log("ed ecco il parent");
+      console.log(genitor);
+      */
 
       //old
       //const { index } = target.dataset;
