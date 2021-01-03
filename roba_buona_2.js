@@ -391,14 +391,14 @@ $( document ).ready(function() {
             left: 0,
             width: "100%",
             height: "100%",
-            ease: Expo.easeInOut
+            ease: Expo.easeOut
         }, "scaleFS")
         .to(title, {
             duration: 1.4,
             left: 55,
             fontSize: 38,
             pointerEvents: "none",
-            ease: Expo.easeInOut
+            ease: Expo.easeOut
         }, "scaleFS")
         .to(subtitle, {
             duration: 1.4,
@@ -406,7 +406,7 @@ $( document ).ready(function() {
             top: 59,
             fontSize: 38,
             pointerEvents: "none",
-            ease: Expo.easeInOut
+            ease: Expo.easeOut
         }, "scaleFS")
         .add("Gisel")
         .fromTo(closeButton, {
