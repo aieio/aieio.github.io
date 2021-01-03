@@ -359,6 +359,13 @@ $( document ).ready(function() {
         });
       } else {
         //animazione per mobile
+
+        const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
+        //let taglineSplit = new SplitText(linkSitoWeb, {type:"chars, words"});
+        console.log("queste sono le lettere:");
+        console.log(linkSitoWebLettere);
+
+
         gsap.timeline()
         .to(clone, {
             duration: 1.4,
@@ -399,15 +406,19 @@ $( document ).ready(function() {
             cursor: "pointer",
             ease: Expo.easeOut
         },'Gisel -=1')
-        .to(sitowebbe, {
+        .set(sitowebbe, {
             autoAlpha: 1,
-            duration: 1,
+            duration: 0.01,
             left: 15,
             color: "black",
             top: sottoSub,
             pointerEvents: "all",
-            ease: Expo.easeInOut
         },'Gisel -=1.4')
+        .from(linkSitoWebLettere, {
+          yPercent:100,
+          stagger:0.05,
+          duration:0.2
+        },'Gisel')
         .fromTo(contenutoPagina, {
             display: "none",
             x: 0,

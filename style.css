@@ -382,9 +382,16 @@ h1 {
   left: 50px;
   top: 0px;
   /*bottom: 0px;*/
+  overflow: hidden;
   position: absolute;
   transition: opacity 0.1s ease-in-out;
   z-index: 9;
+}
+.link-sito {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
  #project-close {
 	 position: absolute;
@@ -1033,10 +1040,17 @@ body .project-active #project-page .project-image:before, body .project-active #
     /* bottom: 80px; */
     left: 50px;
     top: 0px;
+    overflow:hidden;
     /*bottom: 0px;*/
     position: absolute;
     transition: opacity 0.1s ease-in-out;
     z-index: 9;
+  }
+  .link-sito {
+    list-style-type: none;
+	  display: flex;
+	  flex-direction: row;
+	  overflow: hidden;
   }
 
   body .project-active #project-page .project-image:before, body .project-active #project-close {
