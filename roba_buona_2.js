@@ -543,7 +543,7 @@ $( document ).ready(function() {
 
           ScrollTrigger.create({
             trigger: ".project-website",
-            start: "top 65px",
+            start: "top 60px",
             onEnter: () => action3.play(),
             onLeaveBack: () => action3.reverse(),
             onEnterBack: () => action3.play(),
