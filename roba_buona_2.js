@@ -384,7 +384,7 @@ $( document ).ready(function() {
         .to(sitowebbe, {
             autoAlpha: 1,
             duration: 1,
-            left: 15,
+            left: 55,
             color: "black",
             top: sottoSub,
             pointerEvents: "all",
