@@ -383,7 +383,7 @@ $( document ).ready(function() {
         },'Gisel -=1')
         .to(sitowebbe, {
             autoAlpha: 1,
-            duration: 2,
+            duration: 1,
             left: 15,
             color: "black",
             top: sottoSub,
