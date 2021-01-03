@@ -381,13 +381,8 @@ $( document ).ready(function() {
             cursor: "pointer",
             ease: Expo.easeOut
         },'Gisel -=1')
-        .fromTo(sitowebbe, {
-            autoAlpha: 0,
-            y: 80,
-            left: 15,
-        }, {
+        .to(sitowebbe, {
             autoAlpha: 1,
-            y: 0,
             duration: 2,
             left: 15,
             color: "black",
