@@ -175,12 +175,12 @@ function videoProjectsPreview() {
     );
   } else {
     //preview video su Mobile
-    var actionProj1 = gsap.set('#projects #proj-madre .proj-video-preview', {display:'flex', paused:true});
-    var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {display:'flex', paused:true});
-    var actionProj3 = gsap.set('#projects #proj-gs1 .proj-video-preview', {display:'flex', paused:true});
-    var actionProj4 = gsap.set('#projects #proj-grc .proj-video-preview', {display:'flex', paused:true});
-    var actionProj5 = gsap.set('#projects #proj-land .proj-video-preview', {display:'flex', paused:true});
-    var actionProj6 = gsap.set('#projects #proj-mm .proj-video-preview', {display:'flex', paused:true});
+    var actionProj1 = gsap.set('#projects #proj-madre .proj-video-preview', {opacity:1, paused:true});
+    var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {opacity:1, paused:true});
+    var actionProj3 = gsap.set('#projects #proj-gs1 .proj-video-preview', {opacity:1, paused:true});
+    var actionProj4 = gsap.set('#projects #proj-grc .proj-video-preview', {opacity:1, paused:true});
+    var actionProj5 = gsap.set('#projects #proj-land .proj-video-preview', {opacity:1, paused:true});
+    var actionProj6 = gsap.set('#projects #proj-mm .proj-video-preview', {opacity:1, paused:true});
 
 
 
