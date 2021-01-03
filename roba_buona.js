@@ -175,13 +175,33 @@ function videoProjectsPreview() {
     );
   } else {
     //preview video su Mobile
+
+    //provo una sola funzione NON VA
+    /*const projThumbs = gsap.utils.toArray('#projects .proj-video-preview');
+    console.log("questi sono i thumb");
+    console.log(projThumbs);
+
+    projThumbs.forEach(projThumb => {
+      gsap.set(projThumb, {
+        opacity:1,
+        paused:true,
+        scrollTrigger: {
+          start: "top center",
+          scrub: true
+        }
+      })
+    });*/
+
     var actionProj1 = gsap.set('#projects #proj-madre .proj-video-preview', {opacity:1, paused:true});
     var actionProj2 = gsap.set('#projects #proj-italics .proj-video-preview', {opacity:1, paused:true});
     var actionProj3 = gsap.set('#projects #proj-gs1 .proj-video-preview', {opacity:1, paused:true});
     var actionProj4 = gsap.set('#projects #proj-grc .proj-video-preview', {opacity:1, paused:true});
     var actionProj5 = gsap.set('#projects #proj-land .proj-video-preview', {opacity:1, paused:true});
     var actionProj6 = gsap.set('#projects #proj-mm .proj-video-preview', {opacity:1, paused:true});
-
+    var actionProj7 = gsap.set('#projects #proj-combo .proj-video-preview', {opacity:1, paused:true});
+    var actionProj8 = gsap.set('#projects #proj-icon .proj-video-preview', {opacity:1, paused:true});
+    var actionProj9 = gsap.set('#projects #proj-maxxi .proj-video-preview', {opacity:1, paused:true});
+    var actionProj10 = gsap.set('#projects #proj-ll .proj-video-preview', {opacity:1, paused:true});
 
 
     ScrollTrigger.create({
@@ -195,25 +215,25 @@ function videoProjectsPreview() {
               markers:false
             });
    ScrollTrigger.create({
-                      trigger: "#projects #proj-italics",
-                      start: "top center",
-                      end: "bottom center",
-                      onEnter: function(){ actionProj2.play();},
-                      onLeave: function(){ actionProj2.reverse();},
-                      onLeaveBack: function(){ actionProj2.reverse();},
-                      onEnterBack: function(){ actionProj2.play();},
-                      markers:false
-                    });
+              trigger: "#projects #proj-italics",
+              start: "top center",
+              end: "bottom center",
+              onEnter: function(){ actionProj2.play();},
+              onLeave: function(){ actionProj2.reverse();},
+              onLeaveBack: function(){ actionProj2.reverse();},
+              onEnterBack: function(){ actionProj2.play();},
+              markers:false
+            });
    ScrollTrigger.create({
-                                       trigger: "#projects #proj-gs1",
-                                       start: "top center",
-                                       end: "bottom center",
-                                       onEnter: function(){ actionProj3.play();},
-                                       onLeave: function(){ actionProj3.reverse();},
-                                       onLeaveBack: function(){ actionProj3.reverse();},
-                                       onEnterBack: function(){ actionProj3.play();},
-                                       markers:false
-                                     });
+              trigger: "#projects #proj-gs1",
+              start: "top center",
+              end: "bottom center",
+              onEnter: function(){ actionProj3.play();},
+              onLeave: function(){ actionProj3.reverse();},
+              onLeaveBack: function(){ actionProj3.reverse();},
+              onEnterBack: function(){ actionProj3.play();},
+              markers:false
+            });
   ScrollTrigger.create({
                   trigger: "#projects #proj-grc",
                   start: "top center",
@@ -225,26 +245,65 @@ function videoProjectsPreview() {
                   markers:false
              });
   ScrollTrigger.create({
-                             trigger: "#projects #proj-land",
-                             start: "top center",
-                             end: "bottom center",
-                             onEnter: function(){ actionProj5.play();},
-                             onLeave: function(){ actionProj5.reverse();},
-                             onLeaveBack: function(){ actionProj5.reverse();},
-                             onEnterBack: function(){ actionProj5.play();},
-                             markers:false
+                  trigger: "#projects #proj-land",
+                  start: "top center",
+                  end: "bottom center",
+                  onEnter: function(){ actionProj5.play();},
+                  onLeave: function(){ actionProj5.reverse();},
+                  onLeaveBack: function(){ actionProj5.reverse();},
+                  onEnterBack: function(){ actionProj5.play();},
+                  markers:false
                         });
   ScrollTrigger.create({
-                                        trigger: "#projects #proj-mm",
-                                        start: "top center",
-                                        end: "bottom center",
-                                        onEnter: function(){ actionProj6.play();},
-                                        onLeave: function(){ actionProj6.reverse();},
-                                        onLeaveBack: function(){ actionProj6.reverse();},
-                                        onEnterBack: function(){ actionProj6.play();},
-                                        markers:false
-                                   });
-
+                  trigger: "#projects #proj-combo",
+                  start: "top center",
+                  end: "bottom center",
+                  onEnter: function(){ actionProj7.play();},
+                  onLeave: function(){ actionProj7.reverse();},
+                  onLeaveBack: function(){ actionProj7.reverse();},
+                  onEnterBack: function(){ actionProj7.play();},
+                  markers:false
+              });
+  ScrollTrigger.create({
+                 trigger: "#projects #proj-icon",
+                 start: "top center",
+                 end: "bottom center",
+                 onEnter: function(){ actionProj8.play();},
+                 onLeave: function(){ actionProj8.reverse();},
+                 onLeaveBack: function(){ actionProj8.reverse();},
+                 onEnterBack: function(){ actionProj8.play();},
+                 markers:false
+              });
+  ScrollTrigger.create({
+                 trigger: "#projects #proj-mm",
+                 start: "top center",
+                 end: "bottom center",
+                 onEnter: function(){ actionProj6.play();},
+                 onLeave: function(){ actionProj6.reverse();},
+                 onLeaveBack: function(){ actionProj6.reverse();},
+                 onEnterBack: function(){ actionProj6.play();},
+                 markers:false
+             });
+  ScrollTrigger.create({
+           trigger: "#projects #proj-maxxi",
+           start: "top center",
+           end: "bottom center",
+           onEnter: function(){ actionProj9.play();},
+           onLeave: function(){ actionProj9.reverse();},
+           onLeaveBack: function(){ actionProj9.reverse();},
+           onEnterBack: function(){ actionProj9.play();},
+           markers:false
+            });
+  ScrollTrigger.create({
+           trigger: "#projects #proj-ll",
+           start: "top center",
+           end: "bottom center",
+           onEnter: function(){ actionProj10.play();},
+           onLeave: function(){ actionProj10.reverse();},
+           onLeaveBack: function(){ actionProj10.reverse();},
+           onEnterBack: function(){ actionProj10.play();},
+           markers:false
+        });
 
   }
 }

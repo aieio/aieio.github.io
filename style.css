@@ -5,9 +5,12 @@ src: url("/fonts/Fraunces9ptSoft-Light.woff2") format("woff");
 }
 @font-face {
   font-family: "Montreal-medium";
-  src: url("/fonts/NeueMontreal-Medium.woff") format("woff");
+  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -370,6 +373,7 @@ h1 {
   font-weight: 300;
   color: white !important;
   text-decoration: underline;
+  text-decoration: none;
   mix-blend-mode: difference;
   /* grid-column: 2 / span 6; */
   /* display: flex; */
@@ -392,6 +396,14 @@ h1 {
   display: flex;
   flex-direction: row;
   overflow: hidden;
+}
+.underline-website {
+  display: inline-block;
+  background-color: white;
+  position: absolute;
+  height: 2px;
+  bottom: 0px;
+  width: 100%;
 }
  #project-close {
 	 position: absolute;
@@ -883,7 +895,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     opacity: 1 !important;
   }
   .arrow-scroll-more {
-    width: 28px;
+    width: 18px;
     mix-blend-mode: difference;
   }
   .scroll-more-btn {
@@ -986,7 +998,11 @@ body .project-active #project-page .project-image:before, body .project-active #
      position: absolute;
      top: 40px;
      left: 15px;
-     max-width: 100%;
+     /* max-width: 100%; */
+     max-width: calc(100% - 30px);
+  }
+  #project-page .project-subtitle .stretto {
+    letter-spacing: -1.5px;
   }
   .project-close {
     opacity: 0;
@@ -1029,6 +1045,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-weight: 300;
     color: white !important;
     text-decoration: underline;
+    text-decoration: none;
     mix-blend-mode: difference;
     /* grid-column: 2 / span 6; */
     /* display: flex; */
@@ -1112,7 +1129,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-family: 'Fraunces-Light', Arial, sans-serif;
     /*font-style: italic;*/
     font-weight: 300;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 24px;
     grid-column: 1 / span 2;
     margin-top: 240px;
@@ -1208,6 +1225,9 @@ body .project-active #project-page .project-image:before, body .project-active #
   .proj-img-9-12 {
     width: 100%;
     grid-column: 1 / span 2;
+  }
+  .margin-on-mob{
+    margin-bottom: 15px;
   }
   .closing-proj-text {
     width: 100%;

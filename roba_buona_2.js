@@ -166,6 +166,13 @@ $( document ).ready(function() {
       //metto il video a display none
       $("#project-page .proj-video-preview").css("display", "none");
 
+      //variabili per lettere
+      const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
+      const linkSitoWebUnderline = clone.querySelector(".underline-website");
+      //let taglineSplit = new SplitText(linkSitoWeb, {type:"chars, words"});
+      console.log("queste sono le lettere:");
+      console.log(linkSitoWebLettere);
+
 
       if(isDesktop()){
         //animazione per isDesktop
@@ -209,12 +216,7 @@ $( document ).ready(function() {
             cursor: "pointer",
             ease: Expo.easeOut
         },'Gisel -=1')
-        .fromTo(sitowebbe, {
-            autoAlpha: 0,
-            y: 80,
-            left: paddingLeftTitle,
-            top: topParagrafo,
-        }, {
+        .set(sitowebbe, {
             autoAlpha: 1,
             y: 0,
             duration: 2,
@@ -224,6 +226,20 @@ $( document ).ready(function() {
             pointerEvents: "all",
             ease: Expo.easeInOut
         },'Gisel -=1.4')
+        .from(linkSitoWebLettere, {
+          yPercent:100,
+          duration:1,
+          stagger: {
+            each: 0.03,
+            ease: Expo.easeIn
+          },
+          ease: Expo.easeInOut
+        },'Gisel -=1')
+        .from(linkSitoWebUnderline, {
+          x: -150,
+          duration:1.4,
+          ease: Expo.easeIn
+        },'Gisel -=1')
         .fromTo(contenutoPagina, {
             display: "none",
             x: 0,
@@ -360,10 +376,11 @@ $( document ).ready(function() {
       } else {
         //animazione per mobile
 
-        const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
+        //sono su
+        //const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
         //let taglineSplit = new SplitText(linkSitoWeb, {type:"chars, words"});
-        console.log("queste sono le lettere:");
-        console.log(linkSitoWebLettere);
+        //console.log("queste sono le lettere:");
+        //console.log(linkSitoWebLettere);
 
 
         gsap.timeline()
@@ -416,9 +433,18 @@ $( document ).ready(function() {
         },'Gisel -=1.4')
         .from(linkSitoWebLettere, {
           yPercent:100,
-          stagger:0.05,
-          duration:0.2
-        },'Gisel')
+          duration:1.8,
+          stagger: {
+            each: 0.03,
+            ease: Expo.easeIn
+          },
+          ease: Expo.easeInOut
+        },'Gisel -=1')
+        .from(linkSitoWebUnderline, {
+          x: -130,
+          duration:1.2,
+          ease: Expo.easeIn
+        },'Gisel -=1')
         .fromTo(contenutoPagina, {
             display: "none",
             x: 0,
@@ -475,7 +501,9 @@ $( document ).ready(function() {
           var action2 = gsap.set('#project-page h2.project-close', {position:'fixed', paused:true});
 
           //funzione per gestire il website
-          var action3 = gsap.set('#project-page .project-website', {position:'fixed', left:55, paused:true, top:64, ease: Expo.easeInOut});
+          var action3 = gsap.set('#project-page .project-website', {position:'fixed', left:55, paused:true, top:60, ease: Expo.easeInOut});
+
+
           var action4 = gsap.set('#project-page .project-website', {opacity:0, pointerEvents: "none", paused:true});
 
           //ScrollTrigger.update();
@@ -515,7 +543,7 @@ $( document ).ready(function() {
 
           ScrollTrigger.create({
             trigger: ".project-website",
-            start: "top 130px",
+            start: "top 65px",
             onEnter: () => action3.play(),
             onLeaveBack: () => action3.reverse(),
             onEnterBack: () => action3.play(),
@@ -524,7 +552,7 @@ $( document ).ready(function() {
 
           ScrollTrigger.create({
             trigger: "#project-page",
-            start: "bottom center",
+            start: "bottom bottom",
             onEnter: () => action4.play(),
             onLeaveBack: () => action4.reverse(),
             onEnterBack: () => action4.play(),
