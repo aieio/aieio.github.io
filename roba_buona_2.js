@@ -384,7 +384,7 @@ $( document ).ready(function() {
         .to(sitowebbe, {
             autoAlpha: 1,
             duration: 1,
-            left: 55,
+            left: 15,
             color: "black",
             top: sottoSub,
             pointerEvents: "all",
@@ -446,7 +446,7 @@ $( document ).ready(function() {
           var action2 = gsap.set('#project-page h2.project-close', {position:'fixed', paused:true});
 
           //funzione per gestire il website
-          var action3 = gsap.set('#project-page .project-website', {position:'fixed', paused:true, top:64});
+          var action3 = gsap.set('#project-page .project-website', {position:'fixed', left:55, paused:true, top:64, ease: Expo.easeInOut});
           var action4 = gsap.set('#project-page .project-website', {opacity:0, pointerEvents: "none", paused:true});
 
           //ScrollTrigger.update();
