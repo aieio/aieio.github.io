@@ -1,6 +1,6 @@
 document.addEventListener('lazyloaded', function(e){
-  ScrollTrigger.refresh();
-  console.log("refreshatooo!");
+  //ScrollTrigger.refresh();
+  //console.log("refreshatooo!");
 });
 
 $( document ).ready(function() {
@@ -501,7 +501,9 @@ $( document ).ready(function() {
           var action2 = gsap.set('#project-page h2.project-close', {position:'fixed', paused:true});
 
           //funzione per gestire il website
-          var action3 = gsap.set('#project-page .project-website', {position:'fixed', left:55, paused:true, top:60, ease: Expo.easeInOut});
+          var action3 = gsap.set('#project-page .project-website', {position:'fixed', paused:true, top:60, ease: Expo.easeInOut});
+          //funzione per gestire il website lateralmente possibilità gestire ease
+          var action3b = gsap.fromTo('#project-page .project-website', {left:15}, {left:55, paused:true, duration:0.5, ease: Expo.easeInOut});
 
 
           var action4 = gsap.set('#project-page .project-website', {opacity:0, pointerEvents: "none", paused:true});
@@ -547,6 +549,15 @@ $( document ).ready(function() {
             onEnter: () => action3.play(),
             onLeaveBack: () => action3.reverse(),
             onEnterBack: () => action3.play(),
+            markers:false
+          });
+          //prova movimento website laterale
+          ScrollTrigger.create({
+            trigger: ".project-website",
+            start: "top 90px",
+            onEnter: () => action3b.play(),
+            onLeaveBack: () => action3b.reverse(),
+            onEnterBack: () => action3b.play(),
             markers:false
           });
 
