@@ -151,6 +151,17 @@ body {
   /*display: inline;*/
   opacity: 1 !important;
 }
+.btn-pastemail-mob,
+.btn-pastemail-mob-footer {
+  cursor: pointer;
+}
+.btn-pastemail-mob:hover + #copy-link,
+.btn-pastemail-mob-footer:hover + #copy-link-footer {
+  opacity: 1 !important;
+}
+.email-copied-confirmation {
+  display: none;
+}
 .arrow-scroll-more {
   width: 28px;
   z-index: 2;
@@ -164,6 +175,9 @@ body {
   opacity: 1 !important;
 
 }
+.footer-container p::selection {
+  background: #e7de56;
+}
 .social-footer a {
   margin-bottom: 0;
   font-size: 14px;
@@ -172,8 +186,10 @@ body {
   z-index: 2;
   color: white;
   mix-blend-mode: difference;
+  margin-right: 20px;
 }
-p.credits-footer {
+p.credits-footer,
+p.copyright {
   margin: 20px 0 0 0;
   font-size: 14px;
   line-height: 20px;
@@ -198,6 +214,21 @@ p.credits-footer {
   position: relative;
   animation: slide-arrow-more 1s ease-in-out infinite;
   mix-blend-mode: difference;
+}
+.credits-container {
+  display: flex;
+  flex-direction: row;
+}
+.social-footer-container {
+  margin: 0 40px 0 0;
+  width: calc(((100vw - 380px)/12) * 3 );
+}
+.credits-container p.credits-footer {
+  width: calc(((100vw - 380px)/12) * 3 );
+  margin-right: 20px;
+}
+.credits-container p.copyright {
+  width: calc(((100vw - 380px)/12) * 3 );
 }
 
 /*stile per progetti*/

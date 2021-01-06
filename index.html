@@ -24,7 +24,8 @@
   <div class="home-container" id="homesection">
     <p>Huiling Li<br>Communication Designer<br>Milan, Italy</p>
     <p>From art institutions to large corporates, I take care of brand identity for all kinds of clients by offering different visual experiences.<br>Trying to capture the Zeitgeist.</p>
-    <p class="contacts-home">Huiling.li.cn(at)gmail.com <img id="mail-icon" src="svg/icona_link2.svg" alt="copy link"><span id="copy-link"> (copy email)</span><br><a href="">Instagram</a>  <a href="">Linkedin</a></p>
+    <p class="contacts-home"><span class="btn-pastemail-mob">Huiling.li.cn(at)gmail.com <img id="mail-icon" src="svg/icona_link2.svg" alt="copy link"></span><span class="mob-hidden" id="copy-link"> (copy email)</span><br>
+      <span class="email-copied-confirmation des-hidden">email copied !<br></span><a href="">Instagram</a>  <a href="">Linkedin</a></p>
 
     <div class="scroll-more"><img class="arrow-scroll-more scroll-more-btn" src="svg/arrows.svg" alt="v"><p class="scroll-more-btn">Scroll for more</p></div>
     <div class="home-bg-container">
@@ -225,6 +226,13 @@
         </div>
         <div class="grid-content-page">
           <img class="proj-img-1-12 lazyload" data-src="assets/imgs/mm/mm-1.jpg" alt="">
+        </div>
+        <div class="grid-content-page full-content">
+          <div class="proj-img-1-12">
+            <div style="padding:57.14% 0 0 0;position:relative;">
+              <iframe class="lazyload" src="https://player.vimeo.com/video/497717969?title=0&byline=0&portrait=0&autoplay=1&loop=1&autopause=0&color=ff5900&background=1&muted=1?controls=0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+            </div>
+          </div>
         </div>
         <div class="grid-content-page">
           <img class="proj-img-1-12 lazyload" data-src="assets/imgs/mm/mm-2.jpg" alt="">
@@ -732,11 +740,15 @@
   <script>videoProjectsPreview();</script>
   <!-- <script type="text/javascript" src="animation-open-project.js"></script> -->
   <div class="footer-container" id="footersection">
-    <p class="info-footer">Drop me a line for collaboration<br>Huiling.li.cn(at)gmail.com <img id="mail-icon-footer" src="svg/icona_link2.svg" alt="copy link"><span id="copy-link-footer"> (copy email)</span></p>
+    <p class="info-footer">Drop me a line for collaboration<br><span class="btn-pastemail-mob-footer">Huiling.li.cn(at)gmail.com <img id="mail-icon-footer" src="svg/icona_link2.svg" alt="copy link"></span><span id="copy-link-footer"> (copy email)</span></p>
     <div class="social-footer">
-      <a href="">Instagram</a>
-      <a href="">Linkedin</a>
-      <p class="credits-footer">Web Design by Huiling Li<br>Developed by Alberto Candido</p>
+        <a class=" des-hidden" href="">Instagram →</a>
+        <a class=" des-hidden" href="">Linkedin →</a>
+      <div class="credits-container">
+        <p class="social-footer-container mob-hidden"><a href="">Instagram →</a><br><a href="">Linkedin →</a></p>
+        <p class="credits-footer">Web Design by Huiling Li<br>Developed by Alberto Candido</p>
+        <p class="copyright">All trademarks, images, logos in this portfolio are the property of their respective owners.</p>
+      </div>
     </div>
     <div class="scroll-up"><p class="scroll-up-btn">Back to top</p><img class="arrow-scroll-up" src="svg/arrows-up.svg" alt="v"></div>
     <div class="footer-bg-container">
