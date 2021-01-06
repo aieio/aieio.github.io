@@ -418,8 +418,8 @@ $( document ).ready(function() {
         .add("Gisel")
         .fromTo(closeButton, {
             x: -40,
-            autoAlpha: 0,
-            transformOrigin: '50% 0%'
+            autoAlpha: 1,
+            //transformOrigin: '50% 0%'
         }, {
             x: 0,
             autoAlpha: 1,
