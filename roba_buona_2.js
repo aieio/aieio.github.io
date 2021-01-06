@@ -61,12 +61,19 @@ $( document ).ready(function() {
         console.log(genitor);
       } else {
         const genitor = target.parentElement;
-      }
+      }*/
+
       console.log("ecco il target cos'è");
       console.log(target);
       console.log("ed ecco il parent");
       console.log(genitor);
-      */
+
+      let parametroGetMob = genitor.id;
+      var outputGetMob = getProjMobInfo(parametroGetMob);
+      const gotMobTopSito = outputGetMob.topDelSito;
+      const gotMobFontSize = outputGetMob.dimensioneFont;
+      const gotMobMarginTop = outputGetMob.margineAlTop;
+      const gotMobTopSubtitle = outputGetMob.topSubtitle;
 
       //old
       //const { index } = target.dataset;
@@ -83,7 +90,7 @@ $( document ).ready(function() {
       clone.style.top = top + "px";
       clone.style.left = left + "px";
       clone.style.position = "fixed";
-      clone.style.zIndex = 10;
+      clone.style.zIndex = 9;
       clone.classList.add("project-item");
       clone.classList.add("clone");
 
@@ -141,7 +148,7 @@ $( document ).ready(function() {
 
       //calcolo left per titolo progetto madre_aperto
       const largColumn = (window.innerWidth - 80 - 220)/12;
-      const paddingLeftTitle = 50 + largColumn + 20;
+      const paddingLeftTitle = 40 + largColumn + 20;
 
       //funzione per calcolare posizione di fondo del paragrafo
       var paragrafetto = $("#project-page .project-description");
@@ -196,7 +203,7 @@ $( document ).ready(function() {
         .to(subtitle, {
             duration: 1.4,
             left: paddingLeftTitle,
-            top: 130,
+            top: 100,
             fontSize: 52,
             pointerEvents: "none",
             ease: Expo.easeInOut
@@ -222,7 +229,7 @@ $( document ).ready(function() {
             duration: 2,
             left: paddingLeftTitle,
             color: "black",
-            top: 300,
+            top: 220,
             pointerEvents: "all",
             ease: Expo.easeInOut
         },'Gisel -=1.4')
@@ -252,8 +259,7 @@ $( document ).ready(function() {
             x: 0,
             y: 0,
             autoAlpha: 1,
-            //scale: 1,
-            stagger: 0.1,
+            //stagger: 0.1,
             duration: 1.8,
             ease: Expo.easeInOut
         },'Gisel -=1.4')
@@ -296,7 +302,7 @@ $( document ).ready(function() {
           var action2 = gsap.set('#project-page h2.project-close', {position:'fixed', paused:true});
 
           //funzione per gestire il website
-          var action3 = gsap.set('#project-page .project-website', {position:'fixed', paused:true, top:130});
+          var action3 = gsap.set('#project-page .project-website', {position:'fixed', paused:true, top:100});
           var action4 = gsap.set('#project-page .project-website', {opacity:0, pointerEvents: "none", paused:true});
 
           //ScrollTrigger.update();
@@ -336,7 +342,7 @@ $( document ).ready(function() {
 
           ScrollTrigger.create({
             trigger: ".project-website",
-            start: "top 130px",
+            start: "top 100px",
             onEnter: () => action3.play(),
             onLeaveBack: () => action3.reverse(),
             onEnterBack: () => action3.play(),
@@ -396,15 +402,16 @@ $( document ).ready(function() {
         .to(title, {
             duration: 1.4,
             left: 55,
-            fontSize: 38,
+            fontSize: gotMobFontSize,
+            marginTop: gotMobMarginTop,
             pointerEvents: "none",
             ease: Expo.easeOut
         }, "scaleFS")
         .to(subtitle, {
             duration: 1.4,
             left: 15,
-            top: 59,
-            fontSize: 38,
+            top: gotMobTopSubtitle,
+            fontSize: gotMobFontSize,
             pointerEvents: "none",
             ease: Expo.easeOut
         }, "scaleFS")
@@ -428,7 +435,7 @@ $( document ).ready(function() {
             duration: 0.01,
             left: 15,
             color: "black",
-            top: sottoSub,
+            top: gotMobTopSito,
             pointerEvents: "all",
         },'Gisel -=1.4')
         .from(linkSitoWebLettere, {
@@ -537,11 +544,11 @@ $( document ).ready(function() {
           // azioni per website
           //funzione per calcolare posizione di fondo del paragrafo
           var oggettoLinkSito = $("#project-page .project-website");
-          var positionLinkSito = oggettoLinkSito.position(); //cache the position
+          //var positionLinkSito = oggettoLinkSito.position(); //cache the position
           //questo è il bottom a cui andrà il sito web + 340
-          const topLinkSito = positionLinkSito.top;
-          console.log("questo è il top del sito");
-          console.log(topLinkSito);
+          //const topLinkSito = positionLinkSito.top;
+          //console.log("questo è il top del sito");
+          //console.log(topLinkSito);
 
           ScrollTrigger.create({
             trigger: ".project-website",
@@ -755,3 +762,60 @@ $( document ).ready(function() {
 */
 
 });
+
+
+//funzione per avere i valori Mobile
+function getProjMobInfo(idDelProgetto) {
+  var oggettoConInfo = {
+    margineAlTop : 0,
+    dimensioneFont  : 38,
+    topDelSito     : 0,
+    topSubtitle     : 59
+  };
+  //switch per top sito
+  switch (idDelProgetto) {
+    case "proj-madre":
+      oggettoConInfo.topDelSito = 156;
+      break;
+    case "proj-italics":
+      oggettoConInfo.topDelSito = 156;
+      break;
+    case "proj-combo":
+      oggettoConInfo.topDelSito = 110;
+      break;
+    case "proj-ll":
+      oggettoConInfo.topDelSito = 110;
+      break;
+    case "proj-grc":
+      oggettoConInfo.topDelSito = 110;
+      break;
+    default:
+      oggettoConInfo.topDelSito = 0;
+  }
+  if(idDelProgetto == "proj-land"){
+    oggettoConInfo.topSubtitle = 54;
+    oggettoConInfo.dimensioneFont = 30;
+    oggettoConInfo.margineAlTop = 4;
+  }
+  if(idDelProgetto == "proj-maxxi"){
+    oggettoConInfo.topSubtitle = 100;
+  }
+  if(idDelProgetto == "proj-icon"){
+    oggettoConInfo.dimensioneFont = 34;
+  }
+  if(idDelProgetto == "proj-gs1"){
+    oggettoConInfo.dimensioneFont = 34;
+    oggettoConInfo.topSubtitle = 100;
+  }
+  if(idDelProgetto == "proj-grc"){
+    oggettoConInfo.dimensioneFont = 27;
+    oggettoConInfo.margineAlTop = 7;
+    oggettoConInfo.topDelSito = 98;
+  } else if (idDelProgetto == "proj-mm") {
+    oggettoConInfo.dimensioneFont = 32;
+    oggettoConInfo.margineAlTop = 4;
+  }
+
+  return oggettoConInfo;
+
+}

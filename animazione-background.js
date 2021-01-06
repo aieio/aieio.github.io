@@ -1,4 +1,6 @@
 //$( document ).ready(function() {
+let homeInSchermo = true;
+
 function AnimazioneSfondo () {
   const section = document.querySelector(".bg-animation");
 
@@ -7,7 +9,8 @@ function AnimazioneSfondo () {
   const logo3 = document.querySelector(".shape-bg-3");
   //$(".shape-bg-1").css('opacity',1);
 
-  const FPS = 60;
+  //const FPS = 60;
+  //const FPS = 30;
 
   var widthLimite = $('.bg-animation').outerWidth();
   var heightLimite = $('.bg-animation').outerHeight();
@@ -108,6 +111,13 @@ function AnimazioneSfondo () {
       y3Position += y3Speed;
 
       update();
+      /*
+      if(homeInSchermo){
+        window.requestAnimationFrame(prepareUpdate);
+        console.log("l'animazione va");
+      } else {
+        console.log("l'animazione è ferma");
+      }*/
       window.requestAnimationFrame(prepareUpdate);
   }
 };
@@ -243,4 +253,18 @@ function randomYCoordinateMob() {
   var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+document.addEventListener('scroll', function() {
+  let homesect = document.querySelector(".home-container");
+  homeInSchermo = isInViewport(homesect);
+});
 //});
