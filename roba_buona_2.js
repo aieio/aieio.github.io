@@ -454,22 +454,25 @@ $( document ).ready(function() {
         },'Gisel -=1')
         .fromTo(contenutoPagina, {
             display: "none",
-            x: 0,
-            y: 80,
+            y: 50,
             autoAlpha: 0,
             //scale: 1.1,
             //transformOrigin: '50% 0%'
         }, {
             display: "block",
-            x: 0,
             y: 0,
             autoAlpha: 1,
             //scale: 1,
-            stagger: 0.1,
-            duration: 1.8,
-            ease: Expo.easeInOut
-        },'Gisel -=1.4')
-        .set(clone, {height: "auto", overflow: "hidden", display: "block", position: "relative"})
+            //stagger: 0.1,
+            duration: 1.6,
+            //ease: Expo.easeOut
+        },'Gisel -=1.8')
+        .set(clone, {
+          height: "auto",
+          //overflow: "hidden",
+          //display: "block",
+          position: "relative"
+        })
         //.set(title, {position: "fixed", zIndex: 999})
         .add(() => {
           // funziona questo sottyo
@@ -663,7 +666,17 @@ $( document ).ready(function() {
       const contenutoPagina = clone.querySelector(".project-content");
       const projectHero = clone.querySelector(".project-hero");
       const projectContent = clone.querySelector(".project-content");
+
       const duration = 0.6;
+
+      /*
+      var duration = 0;
+      if(!isDesktop()){
+        duration = 0.6;
+      } else {
+        duration = 0.1;
+      }
+      */
 
       const nomeProggett = clone.querySelector(".project-title");
       const tutteCos = clone.querySelector(".project-item");

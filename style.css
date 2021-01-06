@@ -121,6 +121,7 @@ body {
   line-height: 40px;
   max-width: 1000px;
   z-index: 9;
+  z-index: 2;
   position: relative;
   color: white;
   mix-blend-mode: difference;
@@ -149,7 +150,7 @@ body {
 }
 .arrow-scroll-more {
   width: 28px;
-  z-index: 9;
+  z-index: 2;
   mix-blend-mode: difference;
 }
 .scroll-more-btn {
@@ -165,7 +166,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   position: relative;
-  z-index: 9;
+  z-index: 2;
   color: white;
   mix-blend-mode: difference;
 }
@@ -183,7 +184,7 @@ p.credits-footer {
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  z-index: 9;
+  z-index: 2;
 }
 .scroll-up .scroll-up-btn {
   margin: 0 20px 0 0;
@@ -672,6 +673,7 @@ body .project-active #project-page .project-image:before, body .project-active #
 }
 .oi-video-title {
   width: 100%;
+  font-family: 'Montreal-medium', 'Helvetica',sans-serif;
   font-size: 42px;
   line-height: 1.2;
   font-weight: 400;
@@ -1086,7 +1088,8 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
 
   .project-item.active .project-title,
-  .project-item.active .project-subtitle {
+  .project-item.active .project-subtitle,
+  .project-item.active .proj-video-preview {
     pointer-events: none !important;
   }
 
@@ -1238,17 +1241,17 @@ body .project-active #project-page .project-image:before, body .project-active #
     grid-column: 1 / span 2;
     font-size: 22px;
     line-height: 1.2;
+    line-height: 25px;
     font-weight: 400;
     padding: 0px 0;
     color: black;
   }
+  .closing-proj-section {
+    height: 120px;
+  }
   .oi-video-title {
-    width: 100%;
-    font-size: 42px;
-    line-height: 1.2;
-    font-weight: 400;
-    padding: 40px 0 20px;
-    color: black;
+    font-size: 22px;
+    padding: 15px 0 15px;
   }
   .icon-2 {
     height: 100%;
@@ -1277,27 +1280,27 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
   .oi-screen-page {
     background-color: #F15C5C;
-    grid-row-gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    grid-row-gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .oi-screen-page-2 {
     background-color: #F28203;
-    grid-row-gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    grid-row-gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .oi-screen-page-3 {
     background-color: #B5C603;
-    grid-row-gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    grid-row-gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .oi-screen-page-4 {
     background-color: #FFD0E6;
-    grid-row-gap: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    grid-row-gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .land-print-page {
     background-color: black;
@@ -1402,9 +1405,6 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-size: 14px;
     line-height: 20px;
     position: relative;
-    z-index: 9;
-    color: white;
-    mix-blend-mode: difference;
   }
   p.credits-footer {
     margin: 20px 0 0 0;
@@ -1421,7 +1421,7 @@ body .project-active #project-page .project-image:before, body .project-active #
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    z-index: 9;
+    z-index: 2;
   }
   .scroll-up .scroll-up-btn {
     margin: 0 10px 0 0;
