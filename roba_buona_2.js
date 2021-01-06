@@ -419,13 +419,11 @@ $( document ).ready(function() {
         .fromTo(closeButton, {
             x: -40,
             autoAlpha: 0,
-            scale: 1,
             transformOrigin: '50% 0%'
         }, {
             x: 0,
             autoAlpha: 1,
-            scale: 1,
-            duration: 2,
+            duration: 1,
             pointerEvents: "all",
             cursor: "pointer",
             ease: Expo.easeOut
