@@ -129,6 +129,9 @@ body {
 .home-container p::selection {
   background: red;
 }
+.home-container p.contacts-home{
+  margin: 0;
+}
 .home-container p a {
   color: inherit !important;
   text-decoration: underline;
@@ -1433,7 +1436,8 @@ body .project-active #project-page .project-image:before, body .project-active #
     animation: slide-arrow-more 1s ease-in-out infinite;
     mix-blend-mode: difference;
   }
-  .shape-bg-1-footer {
+  .shape-bg-1-footer,
+  .shape-bgmb-1-footer {
     position: absolute;
     width: 190vw;
     height: auto;
@@ -1442,7 +1446,8 @@ body .project-active #project-page .project-image:before, body .project-active #
     mix-blend-mode: difference;
     transition: opacity 1s ease-out;
   }
-  .shape-bg-2-footer {
+  .shape-bg-2-footer,
+  .shape-bgmb-2-footer {
     position: absolute;
     width: 190vw;
     height: auto;
@@ -1451,7 +1456,8 @@ body .project-active #project-page .project-image:before, body .project-active #
     pointer-events: none;
     transition: opacity 1s ease-out;
   }
-  .shape-bg-3-footer {
+  .shape-bg-3-footer,
+  .shape-bgmb-3-footer {
     position: absolute;
     width: 190vw;
     height: auto;

@@ -126,9 +126,22 @@ function AnimazioneSfondo () {
 function AnimazioneSfondoFooter() {
   const section = document.querySelector(".footer-bg-animation");
 
-  const logo = document.querySelector(".shape-bg-1-footer");
-  const logo2 = document.querySelector(".shape-bg-2-footer");
-  const logo3 = document.querySelector(".shape-bg-3-footer");
+  //const logo = document.querySelector(".shape-bg-1-footer");
+  //const logo2 = document.querySelector(".shape-bg-2-footer");
+  //const logo3 = document.querySelector(".shape-bg-3-footer");
+  var logo;
+  var logo2;
+  var logo3;
+  if(isDesktop()){
+    logo = document.querySelector(".shape-bg-1-footer");
+    logo2 = document.querySelector(".shape-bg-2-footer");
+    logo3 = document.querySelector(".shape-bg-3-footer");
+  } else {
+    logo = document.querySelector(".shape-bgmb-1-footer");
+    logo2 = document.querySelector(".shape-bgmb-2-footer");
+    logo3 = document.querySelector(".shape-bgmb-3-footer");
+
+  }
   //$(".shape-bg-1").css('opacity',1);
 
   const FPS = 60;
@@ -173,6 +186,10 @@ function AnimazioneSfondoFooter() {
   $(".shape-bg-1-footer").css('opacity',1);
   $(".shape-bg-2-footer").css('opacity',1);
   $(".shape-bg-3-footer").css('opacity',1);
+
+  $(".shape-bgmb-1-footer").css('opacity',1);
+  $(".shape-bgmb-2-footer").css('opacity',1);
+  $(".shape-bgmb-3-footer").css('opacity',1);
 
 
   //velocità
