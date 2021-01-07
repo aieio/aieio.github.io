@@ -1524,6 +1524,9 @@ body .project-active #project-page .project-image:before, body .project-active #
     font-size: 14px;
     line-height: 20px;
   }
+  .email-copied-confirmation-footer {
+    display: none;
+  }
 
 }
 /*tablet*/
