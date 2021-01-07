@@ -189,10 +189,15 @@ body {
   margin-right: 20px;
 }
 p.credits-footer,
-p.copyright {
+p.copyright,
+p.social-footer-container {
   margin: 20px 0 0 0;
   font-size: 14px;
   line-height: 20px;
+}
+p.social-footer-container a {
+  color: white;
+  mix-blend-mode: difference;
 }
 .footer-container .scroll-up {
   position: absolute;
@@ -220,15 +225,16 @@ p.copyright {
   flex-direction: row;
 }
 .social-footer-container {
-  margin: 0 40px 0 0;
-  width: calc(((100vw - 380px)/12) * 3 );
+  margin: 0 0px 0 0 !important;
+  width: calc(((100vw - 380px)/12) * 2 );
 }
 .credits-container p.credits-footer {
   width: calc(((100vw - 380px)/12) * 3 );
-  margin-right: 20px;
+  margin: 0 20px 0 0 !important;
 }
 .credits-container p.copyright {
   width: calc(((100vw - 380px)/12) * 3 );
+  margin: 0 !important;
 }
 
 /*stile per progetti*/
@@ -1496,6 +1502,27 @@ body .project-active #project-page .project-image:before, body .project-active #
     pointer-events: none;
     mix-blend-mode: difference;
     transition: opacity 1s ease-out;
+  }
+  .credits-container {
+    flex-direction: column;
+  }
+  p.social-footer-container {
+    margin: 0 0 20px 0 !important;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+  }
+  .credits-container p.credits-footer {
+    width: 100%;
+    margin: 0 0 20px 0 !important;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .credits-container p.copyright {
+    width: 100%;
+    margin: 0 !important;
+    font-size: 14px;
+    line-height: 20px;
   }
 
 }

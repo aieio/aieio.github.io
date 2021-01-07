@@ -35,9 +35,10 @@ $( document ).ready(function() {
     };
     //clicco sulla mail e copio
     if(!isDesktop()){
+      var mail_address_mob;
       $(".btn-pastemail-mob").click(function(){
         console.log("cliccato sull'indirizzo mail mob");
-        var mail_address_mob = document.createElement("input");
+        mail_address_mob = document.createElement("input");
         mail_address_mob.value = "huiling.li.cn@gmail.com";
         document.body.appendChild(mail_address_mob);
         mail_address_mob.select();
@@ -60,8 +61,32 @@ $( document ).ready(function() {
               duration: 1.2,
               ease: Expo.easeOut
           });
+      });
+      $(".btn-pastemail-mob-footer").click(function(){
+        console.log("cliccato sull'indirizzo mail mob");
+        mail_address_mob = document.createElement("input");
+        mail_address_mob.value = "huiling.li.cn@gmail.com";
+        document.body.appendChild(mail_address_mob);
+        mail_address_mob.select();
+        document.execCommand("Copy");
+        mail_address_mob.remove();
+        console.log( "ho copiato la mail e mo cambio pure il messaggio" );
 
-        //$(".email-copied-confirmation").css('display','block');
+        var confermaMail = document.querySelector(".email-copied-confirmation-footer");
+        gsap.timeline()
+          .fromTo(confermaMail, {
+              display: "none",
+              x: -40,
+              autoAlpha: 0,
+              //scale: 1.1,
+              //transformOrigin: '50% 0%'
+          }, {
+              display: "block",
+              x: 0,
+              autoAlpha: 1,
+              duration: 1.2,
+              ease: Expo.easeOut
+          });
       });
     };
 

@@ -789,7 +789,7 @@ function getProjMobInfo(idDelProgetto) {
       oggettoConInfo.topDelSito = 156;
       break;
     case "proj-italics":
-      oggettoConInfo.topDelSito = 110;
+      oggettoConInfo.topDelSito = 156;
       break;
     case "proj-combo":
       oggettoConInfo.topDelSito = 110;
