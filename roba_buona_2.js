@@ -3,6 +3,21 @@ document.addEventListener('lazyloaded', function(e){
   //console.log("refreshatooo!");
 });
 
+var stoppalo;
+var cont = 0;
+function refreshScroll(){
+  cont = cont + 1;
+  console.log("cont vale: "+ cont);
+  //if(cont == 10){
+    ScrollTrigger.refresh();
+    cont = 0;
+    console.log("ho refreshato lo scroll");
+  //}
+  stoppalo = window.requestAnimationFrame(refreshScroll);
+
+
+}
+
 $( document ).ready(function() {
 
   //prova per rc
@@ -42,7 +57,12 @@ $( document ).ready(function() {
       if (projectPage.children.length > 0) {
           console.log("c'era già un progetto aperto, mo lo chiudiamo");
           // velocizzo chiusura
-          onProjectCloseFast();
+          if(isDesktop()){
+            onProjectCloseFast();
+          } else {
+            onProjectCloseFastMob();
+          }
+
           //projectPage.firstElementChild.remove();
           //const cloneDaRimuovere = $(".clone");
           //cloneDaRimuovere.remove();
@@ -378,20 +398,15 @@ $( document ).ready(function() {
               child.classList.remove("active")
           );
           projects.children[parseInt(index)].classList.add("active");
+          //refresh
+          //window.requestAnimationFrame(refreshScroll);
         });
       } else {
         //animazione per mobile
-
-        //sono su
-        //const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
-        //let taglineSplit = new SplitText(linkSitoWeb, {type:"chars, words"});
-        //console.log("queste sono le lettere:");
-        //console.log(linkSitoWebLettere);
-
-
         gsap.timeline()
         .to(clone, {
-            duration: 1.4,
+            //duration: 1.6,
+            duration: 0.9,
             backgroundColor: "white",
             top: 0,
             left: 0,
@@ -400,7 +415,7 @@ $( document ).ready(function() {
             ease: Expo.easeOut
         }, "scaleFS")
         .to(title, {
-            duration: 1.4,
+            duration: 1.2,
             left: 55,
             fontSize: gotMobFontSize,
             marginTop: gotMobMarginTop,
@@ -408,7 +423,7 @@ $( document ).ready(function() {
             ease: Expo.easeOut
         }, "scaleFS")
         .to(subtitle, {
-            duration: 1.4,
+            duration: 1.2,
             left: 15,
             top: gotMobTopSubtitle,
             fontSize: gotMobFontSize,
@@ -454,16 +469,11 @@ $( document ).ready(function() {
             display: "none",
             y: 50,
             autoAlpha: 0,
-            //scale: 1.1,
-            //transformOrigin: '50% 0%'
         }, {
             display: "block",
             y: 0,
             autoAlpha: 1,
-            //scale: 1,
-            //stagger: 0.1,
             duration: 1.6,
-            //ease: Expo.easeOut
         },'Gisel -=1.8')
         .set(clone, {
           height: "auto",
@@ -598,6 +608,9 @@ $( document ).ready(function() {
               child.classList.remove("active")
           );
           projects.children[parseInt(index)].classList.add("active");
+
+          // inizio a refreshare
+          //window.requestAnimationFrame(refreshScroll);
         });
       }
 
@@ -616,6 +629,7 @@ $( document ).ready(function() {
 
       const destinazioneScrollBack = $('#homesection').outerHeight();
 
+      //window.cancelAnimationFrame(stoppalo);
 
       gsap.timeline()
           .add("close")
@@ -736,44 +750,52 @@ $( document ).ready(function() {
               $("#projects").removeClass("projects-area-active");
           });
   }
-  /*
-  function scrollino () {
+  function onProjectCloseFastMob() {
 
-    var targettino = $("#project-page h2.project-title");
-    var chiuditi = $("#project-page h2.project-close");
+      const clone = document.querySelector(".clone");
+      const contenutoPagina = clone.querySelector(".project-content");
+      const projectHero = clone.querySelector(".project-hero");
+      const projectContent = clone.querySelector(".project-content");
 
-    var triggerino = $(".clone");
-    var action = gsap.set(targettino, {position:'fixed', paused:true});
-    var actionClose = gsap.set(chiuditi, {position:'fixed', paused:true});
+      const duration = 0.1;
 
+      const nomeProggett = clone.querySelector(".project-title");
+      const tutteCos = clone.querySelector(".project-item");
+      const subProggett = clone.querySelector(".project-subtitle");
+      const websiteProggett = clone.querySelector(".project-website");
 
+      //refresh triggerin solo su Mobile
+      if(!isDesktop()){
+        ScrollTrigger.refresh();
+        console.log("refreshatooo!");
+      }
 
-    ScrollTrigger.create({
-      trigger: triggerino,
-      start: "top top",
-      end: "bottom 200px",
-      onEnter: () => action.play(),
-      onLeave: () => action.reverse(),
-      onLeaveBack: () => action.reverse(),
-      onEnterBack: () => action.reverse(),
-      markers:true
-    });
-
-    ScrollTrigger.create({
-      trigger: triggerino,
-      start: "top top",
-      end: "bottom 200px",
-      onEnter: () => actionClose.play(),
-      onLeave: () => actionClose.reverse(),
-      onLeaveBack: () => actionClose.reverse(),
-      onEnterBack: () => actionClose.reverse(),
-      markers:false
-    });
+      gsap.timeline()
+          .add("close")
+          .to(clone, {
+              duration,
+              height: "0vh",
+              minHeight: "0vh",
+              opacity: "0",
+              onComplete() {
+                  clone.remove();
+              }
+          }, "close")
+          .to(window, {
+              duration,
+              scrollTo: {
+                  y: window.innerHeight
+              },
+              ease: Expo.easeInOut
+          }, "close")
+          .add(() => {
+              document.getElementById("project-page").classList.remove("project-active");
+              Array.from(projects.children).forEach((child) => child.classList.remove("active"));
+          });
   }
-*/
 
+// qui si chiude il windows ready
 });
-
 
 //funzione per avere i valori Mobile
 function getProjMobInfo(idDelProgetto) {

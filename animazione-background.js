@@ -1,7 +1,8 @@
 //$( document ).ready(function() {
 let homeInSchermo = true;
 
-function AnimazioneSfondo () {
+
+function animazioneSfondo () {
   const section = document.querySelector(".bg-animation");
 
   const logo = document.querySelector(".shape-bg-1");
@@ -118,7 +119,7 @@ function AnimazioneSfondo () {
       } else {
         console.log("l'animazione è ferma");
       }*/
-      window.requestAnimationFrame(prepareUpdate);
+      stoppaAnimazione = window.requestAnimationFrame(prepareUpdate);
   }
 };
 
