@@ -435,6 +435,7 @@ h1 {
   z-index: 9;
 }
 .link-sito {
+  position: relative;
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -779,6 +780,11 @@ body .project-active #project-page .project-image:before, body .project-active #
   padding-bottom: 40px;
 }
 /* project video preview*/
+#project-page .closing-proj-section h2::selection {
+  background: pink;
+  color: white;
+  mix-blend-mode: difference;
+}
 
 .project-video-preview-container {
     float: none;

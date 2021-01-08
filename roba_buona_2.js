@@ -1,7 +1,13 @@
 document.addEventListener('lazyloaded', function(e){
+
+  if(isDesktop()){
+    //ScrollTrigger.refresh();
+    //console.log("refreshato su desk!");
+  }
   //ScrollTrigger.refresh();
   //console.log("refreshatooo!");
 });
+
 
 var stoppalo;
 var cont = 0;
