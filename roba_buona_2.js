@@ -20,22 +20,8 @@ function refreshScroll(){
     console.log("ho refreshato lo scroll");
   //}
   stoppalo = window.requestAnimationFrame(refreshScroll);
-
-
 }
-// funzione per stoppare i video
-var stopVideo = function ( element ) {
-	var iframe = element.querySelector( 'iframe');
-	var video = element.querySelector( 'video' );
-	if ( iframe ) {
-		var iframeSrc = iframe.src;
-		iframe.src = iframeSrc;
-    console.log("ho stoppato un video grazie alla nuova funzione");
-	}
-	if ( video ) {
-		video.pause();
-	}
-};
+
 
 $( document ).ready(function() {
 
