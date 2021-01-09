@@ -635,6 +635,17 @@ $( document ).ready(function() {
 
       const destinazioneScrollBack = $('#homesection').outerHeight();
 
+      if(!isDesktop()){
+        //faccio qualcosa per stoppare tutti i video
+        var tuttiIvideo = clone.querySelectorAll('iframe');
+        console.log("questi sono tutti i video ehhhhhhhhh");
+        console.log(tuttiIvideo);
+        tuttiIvideo.forEach( function(videoIframe) {
+          videoIframe.setAttribute('data-src', '');
+          console.log("dovrei aver stoppato sto video");
+          console.log(videoIframe);
+        });
+      }
       //window.cancelAnimationFrame(stoppalo);
 
       gsap.timeline()
@@ -709,6 +720,7 @@ $( document ).ready(function() {
         console.log("refreshatooo!");
       }
 
+
       gsap.timeline()
           .add("close")
           .to(clone, {
@@ -769,6 +781,19 @@ $( document ).ready(function() {
       const tutteCos = clone.querySelector(".project-item");
       const subProggett = clone.querySelector(".project-subtitle");
       const websiteProggett = clone.querySelector(".project-website");
+
+
+      //faccio qualcosa per stoppare tutti i video
+      var tuttiIvideo = clone.querySelectorAll('iframe');
+      console.log("questi sono tutti i video eh");
+      console.log(tuttiIvideo);
+      tuttiIvideo.forEach( function(videoIframe) {
+        videoIframe.setAttribute('data-src', '');
+        console.log("dovrei aver stoppato sto video");
+        console.log(videoIframe);
+      });
+        //console.log(item.contentWindow.document.body.querySelectorAll('a'))
+      //);
 
       //refresh triggerin solo su Mobile
       if(!isDesktop()){
