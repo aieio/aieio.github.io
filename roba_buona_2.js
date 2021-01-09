@@ -429,13 +429,13 @@ $( document ).ready(function() {
             //ease: Expo.easeOut
         }, "scaleFS")
         .to(title, {
-            left: 55,
+            x: 40,
             fontSize: gotMobFontSize,
             marginTop: gotMobMarginTop,
             ease: "none"
         }, "scaleFS")
         .to(subtitle, {
-            left: 15,
+            //left: 15,
             top: gotMobTopSubtitle,
             fontSize: gotMobFontSize,
             ease: "none"
@@ -780,16 +780,16 @@ $( document ).ready(function() {
   function onProjectCloseFastMob() {
 
       const clone = document.querySelector(".clone");
-      const contenutoPagina = clone.querySelector(".project-content");
-      const projectHero = clone.querySelector(".project-hero");
-      const projectContent = clone.querySelector(".project-content");
+      //const contenutoPagina = clone.querySelector(".project-content");
+      //const projectHero = clone.querySelector(".project-hero");
+      //const projectContent = clone.querySelector(".project-content");
 
-      const duration = 0.1;
+      //const duration = 0.1;
 
-      const nomeProggett = clone.querySelector(".project-title");
-      const tutteCos = clone.querySelector(".project-item");
-      const subProggett = clone.querySelector(".project-subtitle");
-      const websiteProggett = clone.querySelector(".project-website");
+      //const nomeProggett = clone.querySelector(".project-title");
+      //const tutteCos = clone.querySelector(".project-item");
+      //const subProggett = clone.querySelector(".project-subtitle");
+      //const websiteProggett = clone.querySelector(".project-website");
 
 
       //faccio qualcosa per stoppare tutti i video
@@ -812,9 +812,12 @@ $( document ).ready(function() {
             //console.log("this is this:");
             //console.log(this);
             var nuovasrc = this.getAttribute('data-src');
-            //console.log("this is nuova src:");
-            //console.log(nuovasrc);
-            this.src = nuovasrc;
+            console.log("this is nuova src:");
+            console.log(nuovasrc);
+            if(nuovasrc){
+              this.src = nuovasrc;
+            }
+            //this.src = nuovasrc;
             //console.log("this is nuovo this:");
             //console.log(this);
             var player = new Vimeo.Player(this);
@@ -837,37 +840,11 @@ $( document ).ready(function() {
         console.log("refreshatooo!");
       }*/
 
+      $('.clone').css('display','none');
       clone.remove();
       window.scrollTo(0, window.innerHeight);
       document.getElementById("project-page").classList.remove("project-active");
       Array.from(projects.children).forEach((child) => child.classList.remove("active"));
-
-      /*
-      gsap.timeline()
-          .add("close")
-          .add(() => {
-              clone.remove();
-          });
-          //.to(clone, {
-              //duration,
-              //height: "0vh",
-              //minHeight: "0vh",
-              //opacity: "0",
-              //onComplete() {
-                  //clone.remove();
-              //}
-          //}, "close")
-          .to(window, {
-              duration,
-              scrollTo: {
-                  y: window.innerHeight
-              },
-              ease: Expo.easeInOut
-          }, "close")
-          .add(() => {
-              document.getElementById("project-page").classList.remove("project-active");
-              Array.from(projects.children).forEach((child) => child.classList.remove("active"));
-          });*/
   }
 
 // qui si chiude il windows ready
