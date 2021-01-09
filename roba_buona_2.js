@@ -23,13 +23,21 @@ function refreshScroll(){
 
 
 }
+// funzione per stoppare i video
+var stopVideo = function ( element ) {
+	var iframe = element.querySelector( 'iframe');
+	var video = element.querySelector( 'video' );
+	if ( iframe ) {
+		var iframeSrc = iframe.src;
+		iframe.src = iframeSrc;
+    console.log("ho stoppato un video grazie alla nuova funzione");
+	}
+	if ( video ) {
+		video.pause();
+	}
+};
 
 $( document ).ready(function() {
-
-  //prova per rc
-  /*console.log("queste sono le coordinate di partenza di Raffaella Cortese");
-  const cortesella = document.getElementById("proj-rc");
-  console.log(cortesella.getBoundingClientRect());*/
 
   // js che si occupa di aprire e chiudere i progetti
 
@@ -79,20 +87,10 @@ $( document ).ready(function() {
       const { target } = event;
       const genitor = target.parentElement;
 
-      //se mobile
-      /*
-      if(!isDesktop()){
-        const genitor = target;
-        console.log("abbiamo definito il genitor");
-        console.log(genitor);
-      } else {
-        const genitor = target.parentElement;
-      }*/
-
-      console.log("ecco il target cos'è");
-      console.log(target);
-      console.log("ed ecco il parent");
-      console.log(genitor);
+      //console.log("ecco il target cos'è");
+      //console.log(target);
+      //console.log("ed ecco il parent");
+      //console.log(genitor);
 
       let parametroGetMob = genitor.id;
       var outputGetMob = getProjMobInfo(parametroGetMob);
@@ -141,22 +139,23 @@ $( document ).ready(function() {
       const title = clone.querySelector(".project-title");
       var subtitle = clone.querySelector(".project-subtitle");
 
-      console.log("questo è il subtitle");
-      console.log(subtitle);
+      //console.log("questo è il subtitle");
+      //console.log(subtitle);
+
       //controllo per sottotitolo corretto
       if(subtitle.classList.contains("mob-hidden")){
-        console.log("ok cha la doppia classe");
+        //console.log("ok cha la doppia classe");
         if(isDesktop()){
-          console.log("e mi piglio la desk");
+          //console.log("e mi piglio la desk");
           subtitle = clone.querySelector(".project-subtitle.mob-hidden");
-          console.log(subtitle);
+          //console.log(subtitle);
         } else {
-          console.log("e mi piglio la mob");
+          //console.log("e mi piglio la mob");
           subtitle = clone.querySelector(".project-subtitle.des-hidden");
-          console.log(subtitle);
+          //console.log(subtitle);
         }
       } else {
-        console.log("non ce l'ha la doppia classe");
+        //console.log("non ce l'ha la doppia classe");
       }
 
       // const hero = clone.querySelector(".project-hero");
@@ -181,7 +180,7 @@ $( document ).ready(function() {
       var positionParagrafo = paragrafetto.position(); //cache the position
       //questo è il bottom a cui andrà il sito web + 340 //220
       const topParagrafo = 220 + paragrafetto.height() - 300;
-      console.log("questa è l'altezza del paragrafo: " + paragrafetto.height() );
+      //console.log("questa è l'altezza del paragrafo: " + paragrafetto.height() );
       //const bottomParagrafo = $(window).height() - positionParagrafo.top - paragrafetto.height();
 
       //calcolo altezza projectSubtitle
@@ -203,8 +202,12 @@ $( document ).ready(function() {
       const linkSitoWebLettere = clone.querySelectorAll(".link-sito li");
       const linkSitoWebUnderline = clone.querySelector(".underline-website");
       //let taglineSplit = new SplitText(linkSitoWeb, {type:"chars, words"});
-      console.log("queste sono le lettere:");
-      console.log(linkSitoWebLettere);
+      //console.log("queste sono le lettere:");
+      //console.log(linkSitoWebLettere);
+
+      //scroll homes
+      var destinazioneScroll = $('#homesection').outerHeight();
+      //console.log("altezza home section: " + destinazioneScroll);
 
 
       if(isDesktop()){
@@ -294,8 +297,8 @@ $( document ).ready(function() {
         .add(() => {
           // funziona questo sottyo
           //window.scrollTo(0, window.innerHeight)
-          var destinazioneScroll = $('#homesection').outerHeight();
-          console.log("altezza home section: " + destinazioneScroll);
+          //var destinazioneScroll = $('#homesection').outerHeight();
+          //console.log("altezza home section: " + destinazioneScroll);
 
           //prova mezzo secondo
           /*
@@ -412,29 +415,30 @@ $( document ).ready(function() {
         gsap.timeline()
         .to(clone, {
             //duration: 1.6,
-            duration: 0.9,
+            duration: 0.5,
             backgroundColor: "white",
             top: 0,
-            left: 0,
-            width: "100%",
+            //left: 0,
+            //width: "100%",
             height: "100%",
-            ease: Expo.easeOut
+            ease: "none"
+            //ease: Expo.easeOut
         }, "scaleFS")
         .to(title, {
-            duration: 1.2,
+            //duration: 1.2,
             left: 55,
             fontSize: gotMobFontSize,
             marginTop: gotMobMarginTop,
-            pointerEvents: "none",
-            ease: Expo.easeOut
+            //pointerEvents: "none",
+            //ease: Expo.easeOut
         }, "scaleFS")
         .to(subtitle, {
-            duration: 1.2,
+            //duration: 1.2,
             left: 15,
             top: gotMobTopSubtitle,
             fontSize: gotMobFontSize,
-            pointerEvents: "none",
-            ease: Expo.easeOut
+            //pointerEvents: "none",
+            //ease: Expo.easeOut
         }, "scaleFS")
         .add("Gisel")
         .fromTo(closeButton, {
@@ -446,74 +450,60 @@ $( document ).ready(function() {
             autoAlpha: 1,
             duration: 1,
             pointerEvents: "all",
-            cursor: "pointer",
-            ease: Expo.easeOut
-        },'Gisel -=1')
+            //cursor: "pointer",
+            //ease: Expo.easeOut
+        //},'Gisel -=1')
+        },'Gisel')
         .set(sitowebbe, {
             autoAlpha: 1,
-            duration: 0.01,
+            //duration: 0.01,
             left: 15,
             color: "black",
             top: gotMobTopSito,
             pointerEvents: "all",
-        },'Gisel -=1.4')
+        //},'Gisel -=1.4')
+        },'Gisel')
         .from(linkSitoWebLettere, {
           yPercent:100,
           duration:1.8,
           stagger: {
             each: 0.03,
-            ease: Expo.easeIn
+            ease: "power3.in"
           },
           ease: Expo.easeInOut
-        },'Gisel -=1')
+        //},'Gisel -=1')
+        },'Gisel')
         .from(linkSitoWebUnderline, {
           x: -130,
           duration:1.2,
           ease: Expo.easeIn
-        },'Gisel -=1')
+        //},'Gisel -=1')
+        },'Gisel')
         .fromTo(contenutoPagina, {
             display: "none",
-            y: 50,
+            //y: 80,
             autoAlpha: 0,
         }, {
             display: "block",
-            y: 0,
+            //y: 0,
             autoAlpha: 1,
-            duration: 1.6,
-        },'Gisel -=1.8')
+            duration: 1.8,
+        //},'Gisel -=1.8')
+      },'Gisel')
         .set(clone, {
           height: "auto",
-          //overflow: "hidden",
-          //display: "block",
           position: "relative"
         })
-        //.set(title, {position: "fixed", zIndex: 999})
-        .add(() => {
-          // funziona questo sottyo
-          //window.scrollTo(0, window.innerHeight)
-          var destinazioneScroll = $('#homesection').outerHeight();
-          console.log("altezza home section: " + destinazioneScroll);
-
-          //prova mezzo secondo
-          /*
-          setTimeout(
-            function()
-            {
-              window.scrollTo(0, destinazioneScroll);
-            }, 1000);
-          */
-          //questo sotto funziona
-          window.scrollTo(0, destinazioneScroll);
-          /*$('html, body').animate({
-              scrollTop: $("#projects").offset().top
-          }, 2000);*/
-
-        })
-        .add( function(){ console.log('ok la animazione dovrebbe essere finita')} )
         .add( function(){
 
-          //funzione per gestire lo scroll/fixed del titolo
-          var argumentProjTitle = $("#project-page h2.project-title").last();
+          console.log('ok la animazione dovrebbe essere finita');
+
+          //scroll pagina sotto homesection
+          window.scrollTo(0, destinazioneScroll);
+
+          //funzione per gestire lo scroll/fixed del titolo nel caso ce ne siano più di uno
+          //var argumentProjTitle = $("#project-page h2.project-title").last();
+          var argumentProjTitle = $("#project-page h2.project-title");
 
           var action = gsap.set(argumentProjTitle, {position:'fixed', paused:true});
           var action5 = gsap.set(argumentProjTitle, {opacity:0, paused:true});
@@ -533,7 +523,8 @@ $( document ).ready(function() {
           var action4 = gsap.set('#project-page .project-website', {opacity:0, pointerEvents: "none", paused:true});
 
           //ScrollTrigger.update();
-          var argumentProjPage = $("#project-page").last();
+          //var argumentProjPage = $("#project-page").last();
+          var argumentProjPage = $("#project-page");
 
           console.log("questo è la situazione projects");
           var ecctl = $("#projects");
@@ -560,7 +551,7 @@ $( document ).ready(function() {
 
           // azioni per website
           //funzione per calcolare posizione di fondo del paragrafo
-          var oggettoLinkSito = $("#project-page .project-website");
+          //var oggettoLinkSito = $("#project-page .project-website");
           //var positionLinkSito = oggettoLinkSito.position(); //cache the position
           //questo è il bottom a cui andrà il sito web + 340
           //const topLinkSito = positionLinkSito.top;
@@ -635,17 +626,38 @@ $( document ).ready(function() {
 
       const destinazioneScrollBack = $('#homesection').outerHeight();
 
-      if(!isDesktop()){
+      //if(!isDesktop()){
         //faccio qualcosa per stoppare tutti i video
-        var tuttiIvideo = clone.querySelectorAll('iframe');
-        console.log("questi sono tutti i video ehhhhhhhhh");
-        console.log(tuttiIvideo);
-        tuttiIvideo.forEach( function(videoIframe) {
-          videoIframe.setAttribute('data-src', '');
-          console.log("dovrei aver stoppato sto video");
-          console.log(videoIframe);
+        //var tuttiIvideo = clone.querySelectorAll('iframe');
+        //console.log("questi sono tutti i video ehhhhhhhhh");
+        //console.log(tuttiIvideo);
+        //tuttiIvideo.forEach( function(videoIframe) {
+          //videoIframe.setAttribute('data-src', '');
+          //console.log("dovrei aver stoppato sto video");
+          //console.log(videoIframe);
+        //});
+      //}
+
+      //distruggo video aperti API
+      $('.clone iframe').each(function() {
+          console.log("this is this:");
+          console.log(this);
+          var nuovasrc = this.getAttribute('data-src');
+          console.log("this is nuova src:");
+          console.log(nuovasrc);
+          this.src = nuovasrc;
+          console.log("this is nuovo this:");
+          console.log(this);
+          var player = new Vimeo.Player(this);
+          player.destroy().then(function() {
+              // the player was destroyed
+              console.log("player distrutto");
+          }).catch(function(error) {
+              // an error occurred
+              console.log("errore nella distruzione player");
+          });
         });
-      }
+
       //window.cancelAnimationFrame(stoppalo);
 
       gsap.timeline()
@@ -720,6 +732,25 @@ $( document ).ready(function() {
         console.log("refreshatooo!");
       }
 
+      //distruggo video aperti API
+      $('.clone iframe').each(function() {
+          //console.log("this is this:");
+          //console.log(this);
+          var nuovasrc = this.getAttribute('data-src');
+          //console.log("this is nuova src:");
+          //console.log(nuovasrc);
+          this.src = nuovasrc;
+          //console.log("this is nuovo this:");
+          //console.log(this);
+          var player = new Vimeo.Player(this);
+          player.destroy().then(function() {
+              // the player was destroyed
+              console.log("player distrutto");
+          }).catch(function(error) {
+              // an error occurred
+              console.log("errore nella distruzione player");
+          });
+        });
 
       gsap.timeline()
           .add("close")
@@ -788,30 +819,66 @@ $( document ).ready(function() {
       console.log("questi sono tutti i video eh");
       console.log(tuttiIvideo);
       tuttiIvideo.forEach( function(videoIframe) {
-        videoIframe.setAttribute('data-src', '');
-        console.log("dovrei aver stoppato sto video");
-        console.log(videoIframe);
+        //videoIframe.setAttribute('data-src', '');
+        //videoIframe.setAttribute('src', '');
+        //console.log("dovrei aver stoppato sto video");
+        //console.log(videoIframe);
+        //var iframeSrcc = videoIframe.src;
+    		//videoIframe.src = iframeSrcc;
+        //console.log("ho provato a stoppare un video con la nuova funzione");
+        //console.log(videoIframe);
+        //console.log(iframeSrcc);
+
+        //distruggo video aperti API
+        $('.clone iframe').each(function() {
+            //console.log("this is this:");
+            //console.log(this);
+            var nuovasrc = this.getAttribute('data-src');
+            //console.log("this is nuova src:");
+            //console.log(nuovasrc);
+            this.src = nuovasrc;
+            //console.log("this is nuovo this:");
+            //console.log(this);
+            var player = new Vimeo.Player(this);
+            player.destroy().then(function() {
+                // the player was destroyed
+                console.log("player distrutto");
+            }).catch(function(error) {
+                // an error occurred
+                console.log("errore nella distruzione player");
+            });
+          });
       });
         //console.log(item.contentWindow.document.body.querySelectorAll('a'))
       //);
 
       //refresh triggerin solo su Mobile
+      /*
       if(!isDesktop()){
         ScrollTrigger.refresh();
         console.log("refreshatooo!");
-      }
+      }*/
 
+      clone.remove();
+      window.scrollTo(0, window.innerHeight);
+      document.getElementById("project-page").classList.remove("project-active");
+      Array.from(projects.children).forEach((child) => child.classList.remove("active"));
+
+      /*
       gsap.timeline()
           .add("close")
-          .to(clone, {
-              duration,
-              height: "0vh",
-              minHeight: "0vh",
-              opacity: "0",
-              onComplete() {
-                  clone.remove();
-              }
-          }, "close")
+          .add(() => {
+              clone.remove();
+          });
+          //.to(clone, {
+              //duration,
+              //height: "0vh",
+              //minHeight: "0vh",
+              //opacity: "0",
+              //onComplete() {
+                  //clone.remove();
+              //}
+          //}, "close")
           .to(window, {
               duration,
               scrollTo: {
@@ -822,7 +889,7 @@ $( document ).ready(function() {
           .add(() => {
               document.getElementById("project-page").classList.remove("project-active");
               Array.from(projects.children).forEach((child) => child.classList.remove("active"));
-          });
+          });*/
   }
 
 // qui si chiude il windows ready
