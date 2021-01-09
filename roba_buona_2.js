@@ -438,7 +438,7 @@ $( document ).ready(function() {
             left: 15,
             top: gotMobTopSubtitle,
             fontSize: gotMobFontSize,
-            /ease: "none"
+            ease: "none"
         }, "scaleFS")
         .add("Gisel")
         .fromTo(closeButton, {
