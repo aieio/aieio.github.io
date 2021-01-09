@@ -169,7 +169,13 @@ $( document ).ready(function() {
       //projectCloseButton.addEventListener("click", onProjectClose);
 
       //aggiungo l'event listner sul closeButton
-      closeButton.addEventListener("click", onProjectClose);
+      //closeButton.addEventListener("click", onProjectClose);
+
+      if(isDesktop()){
+        closeButton.addEventListener("click", onProjectClose);
+      } else {
+        closeButton.addEventListener("click", onProjectCloseFastMob);
+      }
 
       //calcolo left per titolo progetto madre_aperto
       const largColumn = (window.innerWidth - 80 - 220)/12;
@@ -418,41 +424,31 @@ $( document ).ready(function() {
             duration: 0.5,
             backgroundColor: "white",
             top: 0,
-            //left: 0,
-            //width: "100%",
             height: "100%",
             ease: "none"
             //ease: Expo.easeOut
         }, "scaleFS")
         .to(title, {
-            //duration: 1.2,
             left: 55,
             fontSize: gotMobFontSize,
             marginTop: gotMobMarginTop,
-            //pointerEvents: "none",
-            //ease: Expo.easeOut
+            ease: "none"
         }, "scaleFS")
         .to(subtitle, {
-            //duration: 1.2,
             left: 15,
             top: gotMobTopSubtitle,
             fontSize: gotMobFontSize,
-            //pointerEvents: "none",
-            //ease: Expo.easeOut
+            /ease: "none"
         }, "scaleFS")
         .add("Gisel")
         .fromTo(closeButton, {
             x: -40,
             autoAlpha: 1,
-            //transformOrigin: '50% 0%'
         }, {
             x: 0,
             autoAlpha: 1,
             duration: 1,
             pointerEvents: "all",
-            //cursor: "pointer",
-            //ease: Expo.easeOut
-        //},'Gisel -=1')
         },'Gisel')
         .set(sitowebbe, {
             autoAlpha: 1,
@@ -549,15 +545,6 @@ $( document ).ready(function() {
             markers:false
           });
 
-          // azioni per website
-          //funzione per calcolare posizione di fondo del paragrafo
-          //var oggettoLinkSito = $("#project-page .project-website");
-          //var positionLinkSito = oggettoLinkSito.position(); //cache the position
-          //questo è il bottom a cui andrà il sito web + 340
-          //const topLinkSito = positionLinkSito.top;
-          //console.log("questo è il top del sito");
-          //console.log(topLinkSito);
-
           ScrollTrigger.create({
             trigger: ".project-website",
             start: "top 60px",
@@ -586,18 +573,12 @@ $( document ).ready(function() {
           });
 
         })
-        //.call( scrollino )
         .add(() => {
           // se ci sono più progetti aperti
-          // solo un progetto aperto per volta
-
           if (projectPage.children.length > 1) {
               console.log("c'era già un progetto aperto, mo lo chiudiamo");
               projectPage.firstElementChild.remove();
           }
-          //imposto attivo il blocco dei progetti non il body
-          //document.body.classList.add("project-active");
-          //$(".proj-cont").addClass("project-active");
           document.getElementById("project-page").classList.add("project-active");
 
           //imposto attivo solo il progetto corrente?
@@ -605,9 +586,6 @@ $( document ).ready(function() {
               child.classList.remove("active")
           );
           projects.children[parseInt(index)].classList.add("active");
-
-          // inizio a refreshare
-          //window.requestAnimationFrame(refreshScroll);
         });
       }
 
