@@ -60,7 +60,7 @@ $( document ).ready(function() {
           if(isDesktop()){
             onProjectCloseFast();
           } else {
-            onProjectCloseFastt();
+            onProjectCloseFasttReopen();
           }
 
           //projectPage.firstElementChild.remove();
@@ -866,6 +866,94 @@ $( document ).ready(function() {
                     console.log("errore nella distruzione player");
                 });
               });
+
+              //document.body.classList.remove("project-active");
+              //$(".proj-cont").addClass("project-active");
+              document.getElementById("project-page").classList.remove("project-active");
+              Array.from(projects.children).forEach((child) => child.classList.remove("active"));
+
+              //rimuovo la classe per mettere in evidenza la sezione projects
+              $("#projects").removeClass("projects-area-active");
+          });
+  }
+  function onProjectCloseFasttReopen() {
+
+      const clone = document.querySelector(".clone");
+      const contenutoPagina = clone.querySelector(".project-content");
+      const projectHero = clone.querySelector(".project-hero");
+      const projectContent = clone.querySelector(".project-content");
+
+      const duration = 0.6;
+
+      /*
+      var duration = 0;
+      if(!isDesktop()){
+        duration = 0.6;
+      } else {
+        duration = 0.1;
+      }
+      */
+
+      const nomeProggett = clone.querySelector(".project-title");
+      const tutteCos = clone.querySelector(".project-item");
+      const subProggett = clone.querySelector(".project-subtitle");
+      const websiteProggett = clone.querySelector(".project-website");
+
+      const loadingoggetto = document.querySelector(".is-loading");
+      gsap.timeline({
+        onStart() {
+          loadingoggetto.classList.add('is-transitioning');
+        },onComplete() {
+          loadingoggetto.classList.remove('is-transitioning');}
+        })
+          .add("close")
+          .to(clone, {
+              duration,
+              height: "0vh",
+              minHeight: "0vh",
+              padding: "0",
+              opacity: "0",
+              ease: Expo.easeInOut,
+              onComplete() {
+                  clone.remove();
+              }
+          }, "close")
+          .to(nomeProggett, {
+              duration,
+              opacity: 0,
+              display: "none",
+              ease: Expo.easeInOut
+          }, "close")
+          .to(websiteProggett, {
+              duration,
+              opacity: 0,
+              display: "none",
+              ease: Expo.easeInOut
+          }, "close")
+          .to(contenutoPagina.children, {
+              duration,
+              opacity: 0,
+              display: "none",
+              ease: Expo.easeInOut
+          }, "close")
+          .to(window, {
+              duration,
+              scrollTo: {
+                  y: window.innerHeight
+              },
+              ease: Expo.easeInOut
+          }, "close")
+          .add(() => {
+
+            //nomeProggett.style.opacity = "0";
+            //subProggett.style.opacity = "0";
+
+            //refresh triggerin solo su Mobile
+            if(!isDesktop()){
+              ScrollTrigger.refresh();
+              console.log("refreshatooo!");
+            }
+            //distruggo video aperti API
 
               //document.body.classList.remove("project-active");
               //$(".proj-cont").addClass("project-active");
