@@ -12,12 +12,15 @@ function animazioneSfondo () {
 
   //const FPS = 60;
   //const FPS = 30;
+  var widthLimite = section.offsetWidth;
+  var heightLimite = section.offsetHeight;
 
-  var widthLimite = $('.bg-animation').outerWidth();
-  var heightLimite = $('.bg-animation').outerHeight();
+  //var widthLimite = $('.bg-animation').outerWidth();
+  //var heightLimite = $('.bg-animation').outerHeight();
 
-  section.style.height = heightLimite;
-  section.style.width = widthLimite;
+  //disattivo un sec
+  //section.style.height = heightLimite;
+  //section.style.width = widthLimite;
 
   // Logo moving velocity Variables
   //posizioni iniziali
@@ -50,9 +53,12 @@ function animazioneSfondo () {
     y3Position = randomYCoordinateMob();
   }
 
-  $(".shape-bg-1").css('opacity',1);
-  $(".shape-bg-2").css('opacity',1);
-  $(".shape-bg-3").css('opacity',1);
+  //$(".shape-bg-1").css('opacity',1);
+  //$(".shape-bg-2").css('opacity',1);
+  //$(".shape-bg-3").css('opacity',1);
+  logo.style.opacity = 1;
+  logo2.style.opacity = 1;
+  logo3.style.opacity = 1;
 
 
   //velocità
@@ -147,11 +153,15 @@ function AnimazioneSfondoFooter() {
 
   const FPS = 60;
 
-  var widthLimite = $('.footer-bg-animation').outerWidth();
-  var heightLimite = $('.footer-bg-animation').outerHeight();
+  //var widthLimite = $('.footer-bg-animation').outerWidth();
+  //var heightLimite = $('.footer-bg-animation').outerHeight();
 
-  section.style.height = heightLimite;
-  section.style.width = widthLimite;
+  var widthLimite = section.offsetWidth;
+  var heightLimite = section.offsetHeight;
+
+  //disattivo un sec
+  //section.style.height = heightLimite;
+  //section.style.width = widthLimite;
 
   // Logo moving velocity Variables
   //posizioni iniziali
@@ -184,13 +194,19 @@ function AnimazioneSfondoFooter() {
     y3Position = randomYCoordinateMob();
   }
 
-  $(".shape-bg-1-footer").css('opacity',1);
-  $(".shape-bg-2-footer").css('opacity',1);
-  $(".shape-bg-3-footer").css('opacity',1);
+  //$(".shape-bg-1-footer").css('opacity',1);
+  //$(".shape-bg-2-footer").css('opacity',1);
+  //$(".shape-bg-3-footer").css('opacity',1);
+  document.querySelector(".shape-bg-1-footer").style.opacity = 1;
+  document.querySelector(".shape-bg-2-footer").style.opacity = 1;
+  document.querySelector(".shape-bg-3-footer").style.opacity = 1;
 
-  $(".shape-bgmb-1-footer").css('opacity',1);
-  $(".shape-bgmb-2-footer").css('opacity',1);
-  $(".shape-bgmb-3-footer").css('opacity',1);
+  //$(".shape-bgmb-1-footer").css('opacity',1);
+  //$(".shape-bgmb-2-footer").css('opacity',1);
+  //$(".shape-bgmb-3-footer").css('opacity',1);
+  document.querySelector(".shape-bgmb-1-footer").style.opacity = 1;
+  document.querySelector(".shape-bgmb-2-footer").style.opacity = 1;
+  document.querySelector(".shape-bgmb-3-footer").style.opacity = 1;
 
 
   //velocità
@@ -256,19 +272,32 @@ function AnimazioneSfondoFooter() {
 
 
 function randomXCoordinateDesk() {
-  var limiteCoordinate = $( window ).width() / 5 * 4;
+  //var limiteCoordinate = $( window ).width() / 5 * 4;
+  var limiteCoordinate = window.innerWidth / 5 * 4;
+  console.log("questo è il limite X: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 function randomYCoordinateDesk() {
-  var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  var section1 = document.querySelector(".bg-animation");
+  console.log("questo è il limite Y: "+ limiteCoordinate);
+  console.log("questa è section 1");
+  console.log(section1);
+  console.log("questa è section 1 offest heihg");
+  console.log(section1.offsetHeight);
+  //var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  var limiteCoordinate = section1.offsetHeight - (section1.offsetHeight / 100 * 84);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 function randomXCoordinateMob() {
-  var limiteCoordinate = $( window ).width() / 5 * 4;
+  var limiteCoordinate = window.innerWidth / 5 * 4;
+  console.log("questo è il limite X mob: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 function randomYCoordinateMob() {
-  var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  var section1 = document.querySelector(".bg-animation");
+  //var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
+  var limiteCoordinate = section1.offsetHeight - (section1.offsetHeight / 100 * 84);
+  console.log("questo è il limite Y mob: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 
@@ -286,3 +315,13 @@ document.addEventListener('scroll', function() {
   homeInSchermo = isInViewport(homesect);
 });
 //});
+//funzione per il responsive
+function isDesktop() {
+  if(window.innerWidth > 768){
+    //console.log("siamo su desktop");
+    return true;
+  }else {
+    //console.log("siamo su mobile");
+    return false;
+  }
+}
