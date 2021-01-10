@@ -780,6 +780,7 @@ $( document ).ready(function() {
 
       console.log("seleziono tutti i video");
       //faccio qualcosa per stoppare tutti i video
+      /*
       var tuttiIvideo = clone.querySelectorAll('iframe');
       console.log(" mostro i video : questi sono tutti i video eh");
       console.log(tuttiIvideo);
@@ -816,8 +817,8 @@ $( document ).ready(function() {
                 console.log("errore nella distruzione player");
             });
           });
-      });
-      console.log("distrutti tutti gli iframe");
+      });*/
+      console.log("distrutti tutti gli iframe (nascosto al momento)");
         //console.log(item.contentWindow.document.body.querySelectorAll('a'))
       //);
 
@@ -828,12 +829,14 @@ $( document ).ready(function() {
         console.log("refreshatooo!");
       }*/
 
+      window.scrollTo(0, window.innerHeight);
+      console.log("sto scrollando sotto alla sezione home");
+      
       $('.clone').css('display','none');
       console.log("ho messo display none al clone");
       clone.remove();
       console.log("ho rimosso la classe");
-      window.scrollTo(0, window.innerHeight);
-      console.log("sto scrollando sotto alla sezione home");
+
       document.getElementById("project-page").classList.remove("project-active");
       console.log("ho tolto la classe project active");
       Array.from(projects.children).forEach((child) => child.classList.remove("active"));
