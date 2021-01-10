@@ -516,7 +516,6 @@ $( document ).ready(function() {
 
 
           //disattivo scrolltrigger momentaneamente
-          /*
           ScrollTrigger.create({
             trigger: argumentProjPage,
             start: "top top",
@@ -562,7 +561,7 @@ $( document ).ready(function() {
             onEnterBack: () => action4.play(),
             markers:false
           });
-          */
+
 
         })
         .add(() => {
