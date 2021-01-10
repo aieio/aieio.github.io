@@ -144,7 +144,6 @@ $( document ).ready(function() {
         //console.log("non ce l'ha la doppia classe");
       }
 
-      // const hero = clone.querySelector(".project-hero");
       const contenutoPagina = clone.querySelector(".project-content");
       const sitowebbe = clone.querySelector(".project-website");
       const closeButton = clone.querySelector(".project-close");
