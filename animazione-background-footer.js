@@ -144,7 +144,7 @@ function AnimazioneSfondoFooter() {
 function randomXCoordinateDesk() {
   //var limiteCoordinate = $( window ).width() / 5 * 4;
   var limiteCoordinate = window.innerWidth / 5 * 4;
-  console.log("questo è il limite X: "+ limiteCoordinate);
+  //console.log("questo è il limite X: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 function randomYCoordinateDesk() {
@@ -160,14 +160,14 @@ function randomYCoordinateDesk() {
 }
 function randomXCoordinateMob() {
   var limiteCoordinate = window.innerWidth / 5 * 4;
-  console.log("questo è il limite X mob: "+ limiteCoordinate);
+  //console.log("questo è il limite X mob: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 function randomYCoordinateMob() {
   var section1 = document.querySelector(".footer-bg-animation");
   //var limiteCoordinate = $('.bg-animation').outerHeight() - ($('.bg-animation').outerHeight() / 100 * 84);
   var limiteCoordinate = section1.offsetHeight - (section1.offsetHeight / 100 * 84);
-  console.log("questo è il limite Y mob: "+ limiteCoordinate);
+  //console.log("questo è il limite Y mob: "+ limiteCoordinate);
   return Math.floor(Math.random() * limiteCoordinate) + 0;
 }
 

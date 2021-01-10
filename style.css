@@ -1529,6 +1529,14 @@ body .project-active #project-page .project-image:before, body .project-active #
     display: none;
   }
 
+
+
+
+  /*stile per la pagina prodotto singola*/
+  .mob-proj-page {
+    min-height: 100vh;
+  }
+
 }
 /*tablet*/
 @media only screen and (min-width: 768px) and (max-width: 1088px) {
