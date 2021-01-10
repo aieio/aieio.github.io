@@ -160,7 +160,7 @@ $( document ).ready(function() {
       if(isDesktop()){
         closeButton.addEventListener("click", onProjectClose);
       } else {
-        closeButton.addEventListener("click", onProjectCloseFastMob);
+        closeButton.addEventListener("click", onProjectCloseFast);
       }
 
       //calcolo left per titolo progetto madre_aperto
@@ -432,6 +432,7 @@ $( document ).ready(function() {
             autoAlpha: 1,
         }, {
             x: 0,
+            display: "block",
             autoAlpha: 1,
             duration: 1,
             pointerEvents: "all",
@@ -462,7 +463,7 @@ $( document ).ready(function() {
         //},'Gisel -=1')
         },'Gisel')
         .fromTo(contenutoPagina, {
-            display: "none",
+            //display: "none",
             //y: 80,
             autoAlpha: 0,
         }, {
@@ -732,16 +733,19 @@ $( document ).ready(function() {
           .to(nomeProggett, {
               duration,
               opacity: 0,
+              display: "none",
               ease: Expo.easeInOut
           }, "close")
           .to(websiteProggett, {
               duration,
               opacity: 0,
+              display: "none",
               ease: Expo.easeInOut
           }, "close")
           .to(contenutoPagina.children, {
               duration,
               opacity: 0,
+              display: "none",
               ease: Expo.easeInOut
           }, "close")
           .to(window, {
@@ -831,7 +835,7 @@ $( document ).ready(function() {
 
       window.scrollTo(0, window.innerHeight);
       console.log("sto scrollando sotto alla sezione home");
-      
+
       $('.clone').css('display','none');
       console.log("ho messo display none al clone");
       clone.remove();

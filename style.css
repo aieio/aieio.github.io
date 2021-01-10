@@ -363,6 +363,7 @@ h1 {
    left: 40px;
 }
 .project-close {
+  display: none;
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -379,13 +380,6 @@ h1 {
 }
 .project-close img {
   width: 26px;
-}
- .project-hero {
-	 height: 100%;
-	 padding: 3vw;
-	 display: flex;
-	 align-items: flex-start;
-	 position: relative;
 }
  .project-content {
 	 display: none;
@@ -409,6 +403,7 @@ h1 {
 	 width: 100%;
 }
 .project-website {
+  display: none;
   opacity: 0;
   pointer-events: none;
   /*width: 100%;*/
