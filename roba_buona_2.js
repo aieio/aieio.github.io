@@ -60,14 +60,14 @@ $( document ).ready(function() {
           if(isDesktop()){
             onProjectCloseFast();
           } else {
-            onProjectCloseFastMob();
+            onProjectCloseFastt();
           }
 
           //projectPage.firstElementChild.remove();
           //const cloneDaRimuovere = $(".clone");
           //cloneDaRimuovere.remove();
       } else {
-        console.log("non c'erano progetti aperti");
+        //console.log("non c'erano progetti aperti");
       }
 
       const { target } = event;
