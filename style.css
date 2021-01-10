@@ -391,7 +391,7 @@ h1 {
 	 display: none;
    width: 100%;
 	 opacity: 0;
-	 pointer-events: none;
+	 /*pointer-events: none;*/
 	 /*background: white;*/
 	 position: relative;
 	 color: black;
@@ -995,8 +995,8 @@ body .project-active #project-page .project-image:before, body .project-active #
   /* Remove pointer events, to prevent unintended click targets */
 
   .project-item * {
-  	 pointer-events: none;
-  	 user-select: none;
+  	 /*pointer-events: none;
+  	 user-select: none;*/
   }
 
   #proj-mm, #proj-grc,
@@ -1076,7 +1076,7 @@ body .project-active #project-page .project-image:before, body .project-active #
   	 /*display: none;*/
      width: 100%;
   	 opacity: 0;
-  	 pointer-events: none;
+  	 /*pointer-events: none;*/
   	 /*background: white;*/
   	 position: relative;
   	 color: black;
