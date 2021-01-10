@@ -1530,7 +1530,27 @@ body .project-active #project-page .project-image:before, body .project-active #
   }
 
 
-
+  .is-loading{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.8s ease-in-out;
+  }
+  .is-transitioning {
+    display: flex !important;
+    opacity: 1 !important;
+  }
 
   /*stile per la pagina prodotto singola*/
   .mob-proj-page {
