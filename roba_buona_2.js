@@ -795,12 +795,12 @@ $( document ).ready(function() {
       const websiteProggett = clone.querySelector(".project-website");
 
       const loadingoggetto = document.querySelector(".is-loading");
-      gsap.timeline(onStart() {
-                loadingoggetto.classList.add('is-transitioning');
-            },
-            onComplete() {
-                loadingoggetto.classList.remove('is-transitioning');
-            })
+      gsap.timeline({
+        onStart() {
+          loadingoggetto.classList.add('is-transitioning');
+        },onComplete() {
+          loadingoggetto.classList.remove('is-transitioning');}
+        })
           .add("close")
           .to(clone, {
               duration,
