@@ -905,7 +905,7 @@ $( document ).ready(function() {
       const paragrafoLoading = document.querySelector(".is-loading p");
       gsap.timeline({
         onStart() {
-          paragrafoLoading.innerHTML = "loading Project";
+          paragrafoLoading.innerHTML = "Loading project";
           loadingoggetto.classList.add('is-transitioning');
         },onComplete() {
           loadingoggetto.classList.remove('is-transitioning');}
