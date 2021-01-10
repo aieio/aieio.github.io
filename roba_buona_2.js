@@ -794,8 +794,10 @@ $( document ).ready(function() {
       const websiteProggett = clone.querySelector(".project-website");
 
       const loadingoggetto = document.querySelector(".is-loading");
+      const paragrafoLoading = document.querySelector(".is-loading p");
       gsap.timeline({
         onStart() {
+          paragrafoLoading.innerHTML = "Closing Project";
           loadingoggetto.classList.add('is-transitioning');
         },onComplete() {
           loadingoggetto.classList.remove('is-transitioning');}
@@ -900,8 +902,10 @@ $( document ).ready(function() {
       const websiteProggett = clone.querySelector(".project-website");
 
       const loadingoggetto = document.querySelector(".is-loading");
+      const paragrafoLoading = document.querySelector(".is-loading p");
       gsap.timeline({
         onStart() {
+          paragrafoLoading.innerHTML = "loading Project";
           loadingoggetto.classList.add('is-transitioning');
         },onComplete() {
           loadingoggetto.classList.remove('is-transitioning');}
