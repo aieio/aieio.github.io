@@ -765,6 +765,7 @@ $( document ).ready(function() {
   }
   function onProjectCloseFastMob() {
 
+      console.log("sono entrato nel closeFastMob");
       const clone = document.querySelector(".clone");
       //const contenutoPagina = clone.querySelector(".project-content");
       //const projectHero = clone.querySelector(".project-hero");
@@ -777,10 +778,10 @@ $( document ).ready(function() {
       //const subProggett = clone.querySelector(".project-subtitle");
       //const websiteProggett = clone.querySelector(".project-website");
 
-
+      console.log("seleziono tutti i video");
       //faccio qualcosa per stoppare tutti i video
       var tuttiIvideo = clone.querySelectorAll('iframe');
-      console.log("questi sono tutti i video eh");
+      console.log(" mostro i video : questi sono tutti i video eh");
       console.log(tuttiIvideo);
       tuttiIvideo.forEach( function(videoIframe) {
         //videoIframe.setAttribute('data-src', '');
@@ -816,6 +817,7 @@ $( document ).ready(function() {
             });
           });
       });
+      console.log("distrutti tutti gli iframe");
         //console.log(item.contentWindow.document.body.querySelectorAll('a'))
       //);
 
@@ -827,10 +829,16 @@ $( document ).ready(function() {
       }*/
 
       $('.clone').css('display','none');
+      console.log("ho messo display none al clone");
       clone.remove();
+      console.log("ho rimosso la classe");
       window.scrollTo(0, window.innerHeight);
+      console.log("sto scrollando sotto alla sezione home");
       document.getElementById("project-page").classList.remove("project-active");
+      console.log("ho tolto la classe project active");
       Array.from(projects.children).forEach((child) => child.classList.remove("active"));
+      console.log("ho tolto la classe active dai progetti in basso");
+      console.log("fine della chiusura veloce");
   }
 
 // qui si chiude il windows ready
