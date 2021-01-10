@@ -331,7 +331,9 @@ $( document ).ready(function() {
           console.log("questo è la situazione projects");
           var ecctl = $("#projects");
           console.log(ecctl);
+          //disattivo momentaneamente lo scroll triggeri
 
+          
           ScrollTrigger.create({
             trigger: argumentProjPage,
             start: "top top",
@@ -512,6 +514,9 @@ $( document ).ready(function() {
           var ecctl = $("#projects");
           console.log(ecctl);
 
+
+          //disattivo scrolltrigger momentaneamente
+          /*
           ScrollTrigger.create({
             trigger: argumentProjPage,
             start: "top top",
@@ -557,6 +562,7 @@ $( document ).ready(function() {
             onEnterBack: () => action4.play(),
             markers:false
           });
+          */
 
         })
         .add(() => {
